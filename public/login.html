@@ -18,12 +18,18 @@
 		<h1 role="heading">Hello World of Strong Fingers</h1>
 		
 		<section>
-			<form id="login-form">
-				
+			<form id="js-login-form">
+				<fieldset>
+					<legend>Login</legend>
+					<input id="js-login-email" class="input" type="email" placeholder="email address" required>
+                	<input id="js-login-password" class="input" type="password" placeholder="password" required>
+                	<button class="button" type="submit">Login</button>
+				</fieldset>
 			</form>
+			<div class="alert" aria-hidden="true" hidden>Hmmm...incorrect email and/or password</div>
 		</section>
 		
 	</main>
-	<script></script>
+	<script type="text/javascript" src="/js/users.js"></script>
 </body>
 </html>
