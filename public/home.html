@@ -17,7 +17,50 @@
 	<main role="main">
 		<h1 role="heading">Hello World of Strong Fingers</h1>
 		
-		<section class="form"></section>
+		<section>
+			<div id="add-workout-result"></div>
+			<form id="js-add-workout-form">
+				<fieldset>
+					<legend>Add a Workout</legend>
+
+					<label for="js-date" class="label">Workout Date</label>
+					<input id="js-date" class="input" type="text" placeholder="9/3/2017" required>
+
+					<label for="js-grip" class="label">Grip Type</label>
+					<input id="js-grip" class="input" type="text" placeholder="4 finger crimp" required>
+
+					<label for="js-size" class="label">Hold Size (millimeters)</label>
+					<input id="js-size" class="input" type="text" placeholder="15" required>
+
+					<label for="js-sets" class="label">Number of Sets</label>
+					<input id="js-sets" class="input" type="text" placeholder="3" required>
+
+					<label for="js-set-rest" class="label">Rest Between Sets (minutes)</label>
+					<input id="js-set-rest" class="input" type="text" placeholder="4" required>
+
+					<label for="js-reps" class="label">Number of Repetitions</label>
+					<input id="js-reps" class="input" type="text" placeholder="6" required>
+
+					<label for="js-rep-hang" class="label">Repetition Duration (seconds)</label>
+					<input id="js-rep-hang" class="input" type="text" placeholder="6" required>
+
+					<label for="js-rep-rest" class="label">Rest Between Repetitions (seconds)</label>
+					<input id="js-rep-rest" class="input" type="text" placeholder="4" required>
+
+					<label for="js-load" class="label">Load Adjustment (pounds)</label>
+					<input id="js-load" class="input" type="text" placeholder="10" required>
+
+					<label for="js-bodyweight" class="label">Bodyweight (pounds)</label>
+					<input id="js-bodyweight" class="input" type="text" placeholder="153" required>
+
+					<label for="js-comments" class="label">Comments on Performance</label>
+					<input id="js-comments" class="input" type="text" placeholder="Completed all the sets easily" required>
+
+					<button type="submit" class="button">Add Workout</button>
+
+				</fieldset>
+			</form>
+		</section>
 		
 	</main>
 	<script src="index.js"></script>
