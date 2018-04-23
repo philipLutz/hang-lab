@@ -6,17 +6,18 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
 const passport = require('passport');
-const requiredFields = require('../middleware/requiredFields');
+
+//const requiredFields = require('../middleware/requiredFields');
 
 mongoose.Promise = global.Promise;
+
+const jwtAuth = passport.authenticate('jwt', {session: false});
 
 router.use(jwtAuth)
 
 router.use(bodyParser.json())
 
 const { Workout } = require('./models');
-
-const jwtAuth = passport.authenticate('jwt', {session: false});
 
 //Get all workouts for one user
 

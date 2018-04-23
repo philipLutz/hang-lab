@@ -12,8 +12,12 @@ const passport = require('passport');
 // const { james: jimmy, robert: bobby } = actorSurnames;
 // console.log(jimmy); // Stewart - the variable name is jimmy, not james
 // console.log(bobby); // De Niro - the variable name is bobby, not robert
-const { router: usersRouter } = require('./users');
+const { router: usersRouter } = require('./users/router');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
+const { router: workoutsRouter } = require('./workouts/router');
+const { Workout } = require('./workouts/models');
+const { User } = require('./users/models');
+
 
 mongoose.Promise = global.Promise;
 
