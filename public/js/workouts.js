@@ -30,17 +30,17 @@ function postNewWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHan
 		dataType: 'json',
 		contentType: 'application/json',
 		data: JSON.stringify({
-			workoutDate: workoutDate,
-			grip: grip,
-			holdSize: holdSize,
-			sets: sets,
-			setRest: setRest,
-			reps: reps,
-			repHang: repHang,
-			repRest: repRest,
-			load: load,
-			bodyweight: bodyweight,
-			comments: comments
+			"workoutDate": `${workoutDate}`,
+			"grip": `${grip}`,
+			"holdSize": `${holdSize}`,
+			"sets": `${sets}`,
+			"setRest": `${setRest}`,
+			"reps": `${reps}`,
+			"repHang": `${repHang}`,
+			"repRest": `${repRest}`,
+			"load": `${load}`,
+			"bodyweight": `${bodyweight}`,
+			"comments": `${comments}`
 		}),
 		success: (data) => {
 			if(data) {
