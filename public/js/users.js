@@ -59,20 +59,20 @@ $('#js-login-form').submit(event => {
 });
 
 function loginExistingUser() {
-	let email = $('input[id="js-login-email"]').val();
+	let username = $('input[id="js-login-username"]').val();
 	let password = $('input[id="js-login-password"]').val();
-	postExistingUser(email, password);
+	postExistingUser(username, password);
 }
 
-function postExistingUser(email, password) {
+function postExistingUser(username, password) {
 	$.ajax({
-		url: '/api/login',
+		url: '/api/auth/login',
 		type: 'POST',
 		dataType: 'json',
 		contentType: 'application/json',
 		data: JSON.stringify({
-			email: email,
-			password: password
+			"username": `${username}`,
+			"password": `${password}`
 		}),
 		success: (token) => {
 			localStorage.setItem('authToken', token.authToken);
