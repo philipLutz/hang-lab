@@ -14,6 +14,7 @@ function createNewUser() {
 	let email = $('input[id="js-signup-email"]').val();
 	let password = $('input[id="js-signup-password"]').val();
 	postNewUser(firstName, lastName, username, email, password);
+	console.log(firstName, lastName, username, email, password);
 }
 
 function postNewUser(firstName, lastName, username, email, password) {
@@ -21,14 +22,14 @@ function postNewUser(firstName, lastName, username, email, password) {
 	$.ajax({
 		url: '/api/users',
 		type: 'POST',
-		dataType: 'jsonp',
+		dataType: 'json',
 		contentType: 'application/json',
 		data: JSON.stringify({
-			firstName: firstName,
-			lastName: lastName,
-			username: username,
-			email: email,
-			password: password
+			"firstName": `${firstName}`,
+			"lastName": `${lastName}`,
+			"username": `${username}`,
+			"email": `${email}`,
+			"password": `${password}`
 		}),
 		success: (data) => {
 			if(data) {
