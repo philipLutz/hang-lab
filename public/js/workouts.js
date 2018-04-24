@@ -1,6 +1,38 @@
 'use strict';
 
-//Add New Workout
+// Global Variables
+
+let numberOfWorkouts;
+let currentWorkoutId;
+let workoutIdToDelete;
+
+// Get New Workout
+
+$('#js-get-workouts').click(event => {
+	event.preventDefault();
+	getWorkouts();
+});
+
+function getWorkouts() {
+	const token = localStorage.getItem('authToken');
+
+	$.ajax({
+		url: '/api/workouts',
+		type: 'GET',
+		dataType: 'json',
+		headers: {
+			Authorization: `Bearer ${token}`
+		},
+		success: function(data) {
+			console.log(data);
+		},
+		error: function(data) {
+			console.log('error');
+		}
+	});
+};
+
+// Post New Workout
 
 $('#js-add-workout-form').submit(event => {
 	event.preventDefault();
@@ -24,11 +56,17 @@ function addNewWorkout() {
 
 function postNewWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHang, repRest, load, bodyweight, comments) {
 	$('.add-workout-failure').remove();
+
+
+
+	const token = localStorage.getItem('authToken');
+
 	$.ajax({
 		url: '/api/workouts',
 		type: 'POST',
 		dataType: 'json',
 		contentType: 'application/json',
+		headers: {Authorization: `Bearer ${token}`},
 		data: JSON.stringify({
 			"workoutDate": `${workoutDate}`,
 			"grip": `${grip}`,

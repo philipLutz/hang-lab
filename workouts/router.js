@@ -21,8 +21,8 @@ const { Workout } = require('./models');
 
 router.get('/workouts', jwtAuth, (req, res) => {
 	Workout
-		.find({author: req.user._id})
-		.sort({date: -1})
+		.find({user: req.user._id})
+		.sort({workoutDate: -1})
 		.then(workouts => res.json(workouts))
 		.catch(err => {
 			console.error(err);
