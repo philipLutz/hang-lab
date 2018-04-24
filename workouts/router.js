@@ -15,11 +15,11 @@ router.use(jwtAuth)
 
 router.use(bodyParser.json())
 
-const { Workout } = require('./models');
+const {Workout} = require('./models');
 
 //Get all workouts for one user
 
-router.get('/workouts', jwtAuth, (req, res) => {
+router.get('/', jwtAuth, (req, res) => {
 	Workout
 		.find({user: req.user._id})
 		.sort({workoutDate: -1})
@@ -32,7 +32,7 @@ router.get('/workouts', jwtAuth, (req, res) => {
 
 //Get specific workout by _id
 
-router.get('/workouts/:id', jwtAuth, (req, res) => {
+router.get('/:id', jwtAuth, (req, res) => {
 	Workout
 		.findById(req.params.id)
 		.then(workouts => res.json(workouts))
@@ -44,7 +44,7 @@ router.get('/workouts/:id', jwtAuth, (req, res) => {
 
 //Post a workout
 
-router.post('/workouts', jwtAuth, (req, res) => {
+router.post('/', jwtAuth, (req, res) => {
 	Workout
 		.create({
 			user: req.user._id,
@@ -69,7 +69,7 @@ router.post('/workouts', jwtAuth, (req, res) => {
 
 //Edit existing workout by _id
 
-router.put('/workouts/:id', jwtAuth, (req, res) => {
+router.put('/:id', jwtAuth, (req, res) => {
 	Workout
 		.findByIdAndUpdate(req.params.id, {$set: {
 			workoutDate: `${req.body.workoutDate}`,
@@ -93,7 +93,7 @@ router.put('/workouts/:id', jwtAuth, (req, res) => {
 
 //Delete existing workout by _id
 
-router.delete('/workouts/:id', jwtAuth, (req, res) => {
+router.delete('/:id', jwtAuth, (req, res) => {
 	Workout
 		.findByIdAndRemove(req.params.id)
 		.then(workout => {
