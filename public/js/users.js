@@ -21,7 +21,7 @@ function postNewUser(firstName, lastName, username, email, password) {
 	$.ajax({
 		url: '/api/users',
 		type: 'POST',
-		dataType: 'json',
+		dataType: 'jsonp',
 		contentType: 'application/json',
 		data: JSON.stringify({
 			firstName: firstName,
@@ -78,10 +78,24 @@ function postExistingUser(email, password) {
 			location.href = '/home.html';
 		},
 		error: (jqXHR, exception) => {
-			$('.alert').attr('aria-hidden', 'false').removeClass('hidden');
+			$('.alert').attr('aria-hidden', 'false').removeAttr('hidden');
 		}
 	});
 }
+
+//Login Button
+
+$('#log-in-button').click(event => {
+	window.location.href = './login.html';
+	return false;
+});
+
+//Signup Button
+
+$('#sign-up-button').click(event => {
+	window.location.href = './signup.html';
+	return false;
+});
 
 $(function() {
 	const token = localStorage.getItem('authToken');
