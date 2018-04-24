@@ -48,14 +48,22 @@ app.use('/api/auth/', authRouter);
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
 // A protected endpoint which needs a valid JWT to access it
-app.get('/api/protected', jwtAuth, (req, res) => {
-  return res.json({
-    data: 'rosebud'
-  });
-});
+// app.get('/api/protected', jwtAuth, (req, res) => {
+//   return res.json({
+//     data: 'rosebud'
+//   });
+// });
 
-app.use('*', (req, res) => {
-  return res.status(404).json({ message: 'Not Found' });
+// app.use('*', (req, res) => {
+//   return res.status(404).json({ message: 'Not Found' });
+// }); 
+
+//Serve Static
+
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/signup.html');
 });
 
 // Referenced by both runServer and closeServer. closeServer

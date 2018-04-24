@@ -7,8 +7,6 @@ const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
 const passport = require('passport');
 
-//const requiredFields = require('../middleware/requiredFields');
-
 mongoose.Promise = global.Promise;
 
 const jwtAuth = passport.authenticate('jwt', {session: false});
