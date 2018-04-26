@@ -1,0 +1,12 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: 'East Sea Dokdo', cursive;
+}
+
+main {
+	background-image: url(https://liftandcook.com/wp-content/uploads/2017/03/Pine-Light-Wood-Grain-Texture-Table.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	
+}
