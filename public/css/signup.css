@@ -9,14 +9,6 @@ main {
 
 }
 
-/*.background-image {
-	background-image: url(http://eveningsends.com/wp-content/uploads/2017/11/EveningSends_Hangboard-1941.jpg);
-	background-repeat: no-repeat;
-	background-size: 100%;
-	width: 100%;
-	height: vh;
-}*/
-
 html { 
   background: url(http://eveningsends.com/wp-content/uploads/2017/11/EveningSends_Hangboard-1941.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;

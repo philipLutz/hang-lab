@@ -5,8 +5,13 @@
 }
 
 main {
-	background-image: url(https://liftandcook.com/wp-content/uploads/2017/03/Pine-Light-Wood-Grain-Texture-Table.jpg);
-	background-repeat: no-repeat;
-	background-size: 100%;
-	
+	margin: 0;
+}
+
+html { 
+  background: url(https://liftandcook.com/wp-content/uploads/2017/03/Pine-Light-Wood-Grain-Texture-Table.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

@@ -2,7 +2,6 @@
 
 // Global Variables
 
-let numberOfWorkouts;
 let currentWorkoutId;
 let workoutIdToDelete;
 
@@ -38,6 +37,18 @@ function displayAllWorkouts(data) {
 
 // Post New Workout
 
+$('#js-add-workout-button').click(event => {
+	event.preventDefault();
+	$('#add-workout-form').attr("aria-hidden", "false");
+	$('#add-workout-form').removeAttr("hidden");
+});
+
+$('#js-hide-workout-form').click(event => {
+	event.preventDefault();
+	$('#add-workout-form').attr("aria-hidden", "true");
+	$('#add-workout-form').attr("hidden", "true");
+});
+
 $('#js-add-workout-form').submit(event => {
 	event.preventDefault();
 	addNewWorkout();
@@ -60,8 +71,6 @@ function addNewWorkout() {
 
 function postNewWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHang, repRest, load, bodyweight, comments) {
 	$('.add-workout-failure').remove();
-
-	numberOfWorkouts++;
 
 	const token = localStorage.getItem('authToken');
 
@@ -87,7 +96,7 @@ function postNewWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHan
 		success: (data) => {
 			if(data) {
 				$('#add-workout-result').prepend(
-					`<div class="add-workout-success">Your workout was successfuly logged. Workout Count: ${numberOfWorkouts}</div>`
+					`<div class="add-workout-success">Your workout was successfuly logged.</div>`
 					)
 				$('input[id="js-date"]').val('');
 				$('input[id="js-grip"]').val('');
@@ -161,17 +170,6 @@ function putWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHang, r
 				$('#edit-workout-result').prepend(
 					`<div class="add-workout-success">Your workout was successfuly changed.</div>`
 					)
-				$('input[id="js-date"]').val('');
-				$('input[id="js-grip"]').val('');
-				$('input[id="js-size"]').val('');
-				$('input[id="js-sets"]').val('');
-				$('input[id="js-set-rest"]').val('');
-				$('input[id="js-reps"]').val('');
-				$('input[id="js-rep-hang"]').val('');
-				$('input[id="js-rep-rest"]').val('');
-				$('input[id="js-load"]').val('');
-				$('input[id="js-bodyweight"]').val('');
-				$('input[id="js-comments"]').val('');
 			}
 		},
 		error: (...rest) => {
@@ -194,9 +192,8 @@ function deleteWorkout() {
 		headers: {Authorization: `Bearer ${token}`},
 		success: (data) => {
 			console.log(`Successfully deleted workout ${workoutIdToDelete}`);
-			numberOfWorkouts--;
 			$('#delete-workout-result').prepend(
-				`<div class="delete-workout-success">Your workout was successfully deleted. Workout Count: ${numberOfWorkouts}</div>`
+				`<div class="delete-workout-success">Your workout was successfully deleted.</div>`
 				)
 		},
 		error: (...rest) => {
