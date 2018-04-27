@@ -10,6 +10,16 @@ let workoutIdToDelete;
 $('#js-get-workouts').click(event => {
 	event.preventDefault();
 	getWorkouts();
+	$('#display-workout-log').empty();
+	$('#display-workout-log').attr("aria-hidden", "false");
+	$('#display-workout-log').removeAttr("hidden");
+});
+
+$('#js-hide-workout-log').click(event => {
+	event.preventDefault();
+	$('#display-workout-log').attr("aria-hidden", "true");
+	$('#display-workout-log').attr("hidden", "true");
+	$('#display-workout-log').empty();
 });
 
 function getWorkouts() {
@@ -33,7 +43,28 @@ function getWorkouts() {
 
 function displayAllWorkouts(data) {
 	console.log(data);
+	console.log(data.length);
+	console.log(data[0].bodyweight);
+	for (let i=0; i < data.length; i++) {
+		
+
+
+		$('#display-workout-log').append(
+			`<li>${data[i].workoutDate}</li>`
+			)
+	};
+
 }
+
+// Increments the delay on each item.
+$('.rolldown-list li').each(function () {
+  var delay = ($(this).index() / 4) + 's';
+  $(this).css({
+    webkitAnimationDelay: delay,
+    mozAnimationDelay: delay,
+    animationDelay: delay
+  });
+});
 
 // Post New Workout
 
@@ -47,6 +78,7 @@ $('#js-hide-workout-form').click(event => {
 	event.preventDefault();
 	$('#add-workout-form').attr("aria-hidden", "true");
 	$('#add-workout-form').attr("hidden", "true");
+	$('#add-workout-result').empty();
 });
 
 $('#js-add-workout-form').submit(event => {
@@ -96,7 +128,7 @@ function postNewWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHan
 		success: (data) => {
 			if(data) {
 				$('#add-workout-result').prepend(
-					`<div class="add-workout-success">Your workout was successfuly logged.</div>`
+					`<div id="add-workout-success">Your workout was successfuly logged.</div>`
 					)
 				$('input[id="js-date"]').val('');
 				$('input[id="js-grip"]').val('');
@@ -113,7 +145,7 @@ function postNewWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHan
 		},
 		error: (...rest) => {
 			$('#add-workout-result').prepend(
-				`<div class="add-workout-failure">Oops! Failed to add workout. Please try again.</div>`
+				`<div id="add-workout-failure">Oops! Failed to add workout. Please try again.</div>`
 				)
 		}
 	});
