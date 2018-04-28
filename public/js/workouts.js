@@ -43,8 +43,6 @@ function getWorkouts() {
 
 function displayAllWorkouts(data) {
 	console.log(data);
-	console.log(data.length);
-	console.log(data[0].bodyweight);
 	for (let i=0; i < data.length; i++) {
 		
 
@@ -60,14 +58,16 @@ function displayAllWorkouts(data) {
 				<section>Workout Comments: "${data[i].comments}"</section>
 				<section class="workout-id" aria-hidden="true" hidden></section>
 				<button data-id="${data[i]._id}" type="button" role="button" class="js-edit-button">Edit Workout</button>
+				<form class="edit-workout-form"></form>
 				<button data-id="${data[i]._id}" type="button" role="button" class="js-delete-button">Delete Workout</button>
-			</li>`
+			</li>
+			`
 			)
 	};
 
 }
 
-// Increments the delay on each item.
+// Rolldown animation - increments the delay on each item.
 $('.rolldown-list li').each(function () {
   var delay = ($(this).index() / 4) + 's';
   $(this).css({
@@ -164,10 +164,34 @@ function postNewWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHan
 
 // Put Workout (edit)
 
-$('#js-edit-workout-form').submit(event => {
+$('#display-workout-log').on('click', '.js-edit-button', (event => {
+	console.log('edit clicked');
 	event.preventDefault();
-	editWorkout();
-});
+	let workoutIdToEdit = $(event.currentTarget).attr('data-id');
+
+	$(event.currentTarget).next().html(
+		`<fieldset>
+			<legend>Edit Workout</legend>
+
+			<label for="js-date" class="label">Workout Date</label>
+			<input id="js-date" class="input" type="text" placeholder="9/3/2017" required>
+
+			<button type="submit" class="button">Edit Workout</button>
+
+			<button type="button" class="button" class="js-hide-edit-form">Close Workout Form</button>
+		</fieldset>`
+		)
+
+	$(event.currentTarget).remove();
+}));
+
+// Need to get hide edit workout form working
+
+// $('#display-workout-log').on('click', '.js-hide-edit-form', (event => {
+// 	console.log('hide edit form clicked');
+// 	event.preventDefault();
+// 	$(event.currentTarget).closest('form').empty();
+// }));
 
 function editWorkout() {
 	let workoutDate = $('input[id="js-date"]').val();
