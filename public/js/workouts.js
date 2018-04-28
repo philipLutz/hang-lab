@@ -2,8 +2,7 @@
 
 // Global Variables
 
-let currentWorkoutId;
-let workoutIdToDelete;
+var workoutIdToEdit = '';
 
 // Get New Workout
 
@@ -179,14 +178,14 @@ function postNewWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHan
 
 $('#display-workout-log').on('click', '.js-edit-button', (event => {
 	event.preventDefault();
-	let workoutIdToEdit = $(event.currentTarget).attr('data-id');
+	window.workoutIdToEdit = $(event.currentTarget).attr('data-id');
 	$('.edit-workout-form').attr("aria-hidden", "false");
 	$('.edit-workout-form').removeAttr("hidden");
 	$('.js-hide-edit-button').attr("aria-hidden", "false");
 	$('.js-hide-edit-button').removeAttr("hidden");
 	$('.js-edit-button').attr("aria-hidden", "true");
 	$('.js-edit-button').attr("hidden", "true");
-
+	
 }));
 
 // Hide Edit Form
@@ -206,6 +205,7 @@ $('#display-workout-log').on('click', '.js-hide-edit-button', (event => {
 $('#display-workout-log').on('click', '.js-edit-submit-button', (event => {
 	event.preventDefault();
 	console.log('submit clicked');
+	console.log(workoutIdToEdit);
 }));
 
 function editWorkout() {
