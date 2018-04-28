@@ -10,16 +10,16 @@ let workoutIdToDelete;
 $('#js-get-workouts').click(event => {
 	event.preventDefault();
 	getWorkouts();
-	$('.display-workout-log').empty();
-	$('.display-workout-log').attr("aria-hidden", "false");
-	$('.display-workout-log').removeAttr("hidden");
+	$('#display-workout-log').empty();
+	$('#display-workout-log').attr("aria-hidden", "false");
+	$('#display-workout-log').removeAttr("hidden");
 });
 
 $('#js-hide-workout-log').click(event => {
 	event.preventDefault();
-	$('.display-workout-log').attr("aria-hidden", "true");
-	$('.display-workout-log').attr("hidden", "true");
-	$('.display-workout-log').empty();
+	$('#display-workout-log').attr("aria-hidden", "true");
+	$('#display-workout-log').attr("hidden", "true");
+	$('#display-workout-log').empty();
 });
 
 function getWorkouts() {
@@ -49,22 +49,19 @@ function displayAllWorkouts(data) {
 		
 
 
-		// $('#display-workout-log').append(
-		// 	`<li data-id="${data[i]._id}" class="workout-item">
-		// 		<h3>${data[i].workoutDate}</h3>
-		// 		<section>Grip: ${data[i].holdSize} mm ${data[i].grip}</section>
-		// 		<section>${data[i].sets} sets of ${data[i].reps} reps</section>
-		// 		<section>Rep: ${data[i].repHang} s hang / ${data[i].repRest} s rest</section>
-		// 		<section>Rest between sets: ${data[i].setRest}min</section>
-		// 		<section>Bodyweight: ${data[i].bodyweight} lb, Additional Load: ${data[i].load} lb</section>
-		// 		<section>Workout Comments: "${data[i].comments}"</section>
-		// 		<section class="workout-id" aria-hidden="true" hidden></section>
-		// 		<button type="button" role="button" class="js-edit-button">Edit Workout</button>
-		// 		<button data-id="${data[i]._id}" type="button" role="button" class="js-delete-button">Delete Workout</button>
-		// 	</li>`
-		// 	)
-		$('.display-workout-log').append(
-			`<button data-id="${data[i]._id}" type="button" role="button" class="js-delete-button">Delete Workout</button>`
+		$('#display-workout-log').append(
+			`<li class="workout-item">
+				<h3>${data[i].workoutDate}</h3>
+				<section>Grip: ${data[i].holdSize} mm ${data[i].grip}</section>
+				<section>${data[i].sets} sets of ${data[i].reps} reps</section>
+				<section>Rep: ${data[i].repHang} s hang / ${data[i].repRest} s rest</section>
+				<section>Rest between sets: ${data[i].setRest}min</section>
+				<section>Bodyweight: ${data[i].bodyweight} lb, Additional Load: ${data[i].load} lb</section>
+				<section>Workout Comments: "${data[i].comments}"</section>
+				<section class="workout-id" aria-hidden="true" hidden></section>
+				<button data-id="${data[i]._id}" type="button" role="button" class="js-edit-button">Edit Workout</button>
+				<button data-id="${data[i]._id}" type="button" role="button" class="js-delete-button">Delete Workout</button>
+			</li>`
 			)
 	};
 
@@ -228,18 +225,17 @@ function putWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHang, r
 
 // Delete Workout
 
-$('.display-workout-log').on('click', '.js-delete-button', (event => {
+$('#display-workout-log').on('click', '.js-delete-button', (event => {
 	console.log('delete clicked');
 	event.preventDefault();
-	// console.log($(this));
-	// console.log(event.currentTarget);
 	let workoutIdToDelete = $(event.currentTarget).attr('data-id');
-	console.log(workoutIdToDelete);
+	deleteWorkout(workoutIdToDelete,);
+	$(event.currentTarget).closest('li').remove();
 }));
 
-function deleteWorkout() {
+function deleteWorkout(workoutIdToDelete) {
 	const token = localStorage.getItem('authToken');
-	
+	console.log(workoutIdToDelete);
 	$.ajax({
 		url: `/api/workouts/${workoutIdToDelete}`,
 		type: 'DELETE',
@@ -247,6 +243,7 @@ function deleteWorkout() {
 		headers: {Authorization: `Bearer ${token}`},
 		success: (data) => {
 			console.log(`Successfully deleted workout ${workoutIdToDelete}`);
+
 			$('#delete-workout-result').prepend(
 				`<div class="delete-workout-success">Your workout was successfully deleted.</div>`
 				)
