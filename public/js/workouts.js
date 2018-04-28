@@ -58,7 +58,18 @@ function displayAllWorkouts(data) {
 				<section>Workout Comments: "${data[i].comments}"</section>
 				<section class="workout-id" aria-hidden="true" hidden></section>
 				<button data-id="${data[i]._id}" type="button" role="button" class="js-edit-button">Edit Workout</button>
-				<form class="edit-workout-form"></form>
+				<button type="button" role="button" class="js-hide-edit-button" aria-hidden="true" hidden>Close Edit Workout</button>
+				<form class="edit-workout-form" aria-hidden="true" hidden>
+					<fieldset>
+						<legend>Edit Workout</legend>
+
+						<label for="js-date" class="label">Workout Date</label>
+						<input id="js-date" class="input" type="text" placeholder="9/3/2017" required>
+
+						<button type="submit" class="js-edit-submit-button">Edit Workout</button>
+
+					</fieldset>
+				</form>
 				<button data-id="${data[i]._id}" type="button" role="button" class="js-delete-button">Delete Workout</button>
 			</li>
 			`
@@ -164,34 +175,38 @@ function postNewWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHan
 
 // Put Workout (edit)
 
+// Display Edit Form, make workoutIdToEdit global variable...
+
 $('#display-workout-log').on('click', '.js-edit-button', (event => {
-	console.log('edit clicked');
 	event.preventDefault();
 	let workoutIdToEdit = $(event.currentTarget).attr('data-id');
+	$('.edit-workout-form').attr("aria-hidden", "false");
+	$('.edit-workout-form').removeAttr("hidden");
+	$('.js-hide-edit-button').attr("aria-hidden", "false");
+	$('.js-hide-edit-button').removeAttr("hidden");
+	$('.js-edit-button').attr("aria-hidden", "true");
+	$('.js-edit-button').attr("hidden", "true");
 
-	$(event.currentTarget).next().html(
-		`<fieldset>
-			<legend>Edit Workout</legend>
-
-			<label for="js-date" class="label">Workout Date</label>
-			<input id="js-date" class="input" type="text" placeholder="9/3/2017" required>
-
-			<button type="submit" class="button">Edit Workout</button>
-
-			<button type="button" class="button" class="js-hide-edit-form">Close Workout Form</button>
-		</fieldset>`
-		)
-
-	$(event.currentTarget).remove();
 }));
 
-// Need to get hide edit workout form working
+// Hide Edit Form
 
-// $('#display-workout-log').on('click', '.js-hide-edit-form', (event => {
-// 	console.log('hide edit form clicked');
-// 	event.preventDefault();
-// 	$(event.currentTarget).closest('form').empty();
-// }));
+$('#display-workout-log').on('click', '.js-hide-edit-button', (event => {
+	event.preventDefault();
+	$('.edit-workout-form').attr("aria-hidden", "true");
+	$('.edit-workout-form').attr("hidden", "true");
+	$('.js-hide-edit-button').attr("aria-hidden", "true");
+	$('.js-hide-edit-button').attr("hidden", "true");
+	$('.js-edit-button').attr("aria-hidden", "false");
+	$('.js-edit-button').removeAttr("hidden");
+}));
+
+// Listen for Edit Form submission
+
+$('#display-workout-log').on('click', '.js-edit-submit-button', (event => {
+	event.preventDefault();
+	console.log('submit clicked');
+}));
 
 function editWorkout() {
 	let workoutDate = $('input[id="js-date"]').val();
