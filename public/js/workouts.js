@@ -52,23 +52,12 @@ function displayAllWorkouts(data) {
 				<section>Grip: ${data[i].holdSize} mm ${data[i].grip}</section>
 				<section>${data[i].sets} sets of ${data[i].reps} reps</section>
 				<section>Rep: ${data[i].repHang} s hang / ${data[i].repRest} s rest</section>
-				<section>Rest between sets: ${data[i].setRest}min</section>
+				<section>Rest between sets: ${data[i].setRest} min</section>
 				<section>Bodyweight: ${data[i].bodyweight} lb, Additional Load: ${data[i].load} lb</section>
 				<section>Workout Comments: "${data[i].comments}"</section>
 				<section class="workout-id" aria-hidden="true" hidden></section>
 				<button data-id="${data[i]._id}" type="button" role="button" class="js-edit-button">Edit Workout</button>
 				<button type="button" role="button" class="js-hide-edit-button" aria-hidden="true" hidden>Close Edit Workout</button>
-				<form class="edit-workout-form" aria-hidden="true" hidden>
-					<fieldset>
-						<legend>Edit Workout</legend>
-
-						<label for="js-date" class="label">Workout Date</label>
-						<input id="js-date" class="input" type="text" placeholder="9/3/2017" required>
-
-						<button type="submit" class="js-edit-submit-button">Edit Workout</button>
-
-					</fieldset>
-				</form>
 				<button data-id="${data[i]._id}" type="button" role="button" class="js-delete-button">Delete Workout</button>
 			</li>
 			`
@@ -176,6 +165,8 @@ function postNewWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHan
 
 // Display Edit Form, make workoutIdToEdit global variable...
 
+// I need to redo the PUT form so that it is hidden when the page originally loads and then when the user clicks on the workout to edit it, the list of other workouts disappears and the form then prefills in with the info from the specific workout.  I think I am having trouble because there is a form for each item in the list and I can't specify (easily) which one I want to submit to the server. So I just need to grab the values (like I did to get the data-id) from the event.currentTarget then add the to the edit form, then the request should be good?
+
 $('#display-workout-log').on('click', '.js-edit-button', (event => {
 	event.preventDefault();
 	window.workoutIdToEdit = $(event.currentTarget).attr('data-id');
@@ -202,25 +193,25 @@ $('#display-workout-log').on('click', '.js-hide-edit-button', (event => {
 
 // Listen for Edit Form submission
 
-$('#display-workout-log').on('click', '.js-edit-submit-button', (event => {
+$('#display-workout-log').on('click', '#js-edit-submit-button', (event => {
 	event.preventDefault();
 	console.log('submit clicked');
-	console.log(workoutIdToEdit);
+	editWorkout();
 }));
 
 function editWorkout() {
-	let workoutDate = $('input[id="js-date"]').val();
-	let grip = $('input[id="js-grip"]').val();
-	let holdSize = $('input[id="js-size"]').val();
-	let sets = $('input[id="js-sets"]').val();
-	let setRest = $('input[id="js-set-rest"]').val();
-	let reps = $('input[id="js-reps"]').val();
-	let repHang = $('input[id="js-rep-hang"]').val();
-	let repRest = $('input[id="js-rep-rest"]').val();
-	let load = $('input[id="js-load"]').val();
-	let bodyweight = $('input[id="js-bodyweight"]').val();
-	let comments = $('input[id="js-comments"]').val();
-	putWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHang, repRest, load, bodyweight, comments);
+	let workoutDate = $(event.currentTarget).find('.js-date').val();
+	// let grip = $('input[id="js-grip"]').val();
+	// let holdSize = $('input[id="js-size"]').val();
+	// let sets = $('input[id="js-sets"]').val();
+	// let setRest = $('input[id="js-set-rest"]').val();
+	// let reps = $('input[id="js-reps"]').val();
+	// let repHang = $('input[id="js-rep-hang"]').val();
+	// let repRest = $('input[id="js-rep-rest"]').val();
+	// let load = $('input[id="js-load"]').val();
+	// let bodyweight = $('input[id="js-bodyweight"]').val();
+	// let comments = $('input[id="js-comments"]').val();
+	console.log(workoutDate);
 }
 
 function putWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHang, repRest, load, bodyweight, comments) {
@@ -229,7 +220,7 @@ function putWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHang, r
 	const token = localStorage.getItem('authToken');
 
 	$.ajax({
-		url: `/api/workouts/${currentWorkoutId}`,
+		url: `/api/workouts/${workoutIdToEdit}`,
 		type: 'PUT',
 		dataType: 'json',
 		contentType: 'application/json',
@@ -250,7 +241,7 @@ function putWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHang, r
 		success: (data) => {
 			if(data) {
 				$('#edit-workout-result').prepend(
-					`<div class="add-workout-success">Your workout was successfuly changed.</div>`
+					`<div class="edit-workout-success">Your workout was successfuly changed.</div>`
 					)
 			}
 		},
@@ -260,6 +251,7 @@ function putWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHang, r
 				)
 		}
 	});
+	getWorkouts();
 }
 
 // Delete Workout
