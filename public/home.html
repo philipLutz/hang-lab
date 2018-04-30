@@ -21,9 +21,15 @@
 	</header>
 	<main role="main">
 		<h1 role="heading">Hang Lab</h1>
-		<section id="add-workout-form" aria-hidden="true" hidden>
+
+		<section id="action-results">
+			<div id="delete-workout-result"></div>
 			<div id="add-workout-result"></div>
 			<div id="edit-workout-result"></div>
+		</section>
+
+		<section id="add-workout-form" aria-hidden="true" hidden>
+			
 			<form id="js-add-workout-form">
 				<fieldset>
 					<legend>Add a Workout</legend>
@@ -66,6 +72,12 @@
 					<button type="button" class="button" id="js-hide-workout-form">Close Workout Form</button>
 
 				</fieldset>
+			</form>
+		</section>
+
+		<section id="edit-workout-form" aria-hidden="true" hidden>
+			<form id="js-edit-workout-form">
+				
 			</form>
 		</section>
 
