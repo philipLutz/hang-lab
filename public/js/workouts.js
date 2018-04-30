@@ -51,17 +51,19 @@ function displayAllWorkouts(data) {
 			`<li class="workout-item">
 				<h3 data-date="${data[i].workoutDate}">${data[i].workoutDate}</h3>
 				
-				<section data-holdSize="${data[i].holdSize}" data-grip="${data[i].grip}" class="edit-hold">Grip: ${data[i].holdSize} mm ${data[i].grip}</section>
+				<section data-holdSize="${data[i].holdSize}" data-grip="${data[i].grip}" class="edit-hold"><b>Grip</b>: ${data[i].holdSize} mm ${data[i].grip}</section>
 				
-				<section data-sets="${data[i].sets}" data-reps="${data[i].reps}" class="edit-sets">${data[i].sets} sets of ${data[i].reps} reps</section>
+				<section data-sets="${data[i].sets}" data-reps="${data[i].reps}" class="edit-sets"><b>Form</b>: ${data[i].sets} sets of ${data[i].reps} reps</section>
 				
-				<section data-repHang="${data[i].repHang}" data-repRest="${data[i].repRest}" class="edit-rep">Rep: ${data[i].repHang} s hang / ${data[i].repRest} s rest</section>
+				<section data-repHang="${data[i].repHang}" data-repRest="${data[i].repRest}" class="edit-rep"><b>Rep</b>: ${data[i].repHang} sec hang / ${data[i].repRest} sec rest</section>
 				
-				<section data-setRest="${data[i].setRest}" class="edit-rest">Rest between sets: ${data[i].setRest} min</section>
+				<section data-setRest="${data[i].setRest}" class="edit-rest"><b>Rest between sets</b>: ${data[i].setRest} min</section>
 				
-				<section data-bodyweight="${data[i].bodyweight}" data-load="${data[i].load}" class="edit-load">Bodyweight: ${data[i].bodyweight} lb, Additional Load: ${data[i].load} lb</section>
+				<section data-bodyweight="${data[i].bodyweight}" data-load="${data[i].load}" class="edit-load"><b>Bodyweight</b>: ${data[i].bodyweight} lb</section>
+
+				<section data-bodyweight="${data[i].bodyweight}" data-load="${data[i].load}" class="edit-load"><b>Additional Load</b>: ${data[i].load} lb</section>
 				
-				<section data-comments="${data[i].comments}" class="edit-comments">Workout Comments: "${data[i].comments}"</section>
+				<section data-comments="${data[i].comments}" class="edit-comments"><b>Workout Comments</b>: "${data[i].comments}"</section>
 				
 				
 				<button data-id="${data[i]._id}" type="button" role="button" class="js-edit-button">Edit Workout</button>
