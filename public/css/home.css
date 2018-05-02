@@ -13,10 +13,10 @@ h1 {
 	font-size: 20vw;
 	text-align: center;
   position: absolute;
-  margin-bottom: 10vw;
-  height: 20vw;
-  top: 10vw;
+  top: 20vw;
   left:23%;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 header {
@@ -25,12 +25,13 @@ header {
 }
 
 header button {
-  font-size: 4vw;
+  font-size: 4.5vw;
   /*background-color: rgba(0, 102, 255, 0.3);*/
   background-color: rgba(129, 5, 252, 0.3);
   color: black;
   border-radius: 2vw;
   border-color: rgba(129, 5, 252, 0.3);
+  margin: 0.5vw;
 }
 
 html { 
@@ -44,7 +45,7 @@ html {
 
 #display-workout-log {
   position: absolute;
-  top: 37vw;
+  top: 41vw;
   width: 90%; 
   left: 2%;
   text-align: center;
@@ -66,7 +67,7 @@ html {
 
 #add-workout-form {
   position: absolute;
-  top: 43vw;
+  top: 47vw;
   width: 94%; 
   left: 2%;
   box-sizing: border-box;
@@ -111,6 +112,22 @@ fieldset {
 #add-workout-form #js-comments {
   width: 37vw;
 }
+
+
+
+
+
+
+
+
+/*Progress Chart Styling*/
+
+
+
+
+
+
+
 /* GET li rolldown */
 
 .rolldown-list {

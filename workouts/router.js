@@ -30,15 +30,16 @@ router.get('/', jwtAuth, (req, res) => {
 		});
 });
 
-//Get specific workout by _id
+//Get all workouts with same grip
 
-router.get('/:id', jwtAuth, (req, res) => {
+router.get('/:grip', jwtAuth, (req, res) => {
 	Workout
-		.findById(req.params.id)
+		.find({grip: req.params.grip})
+		.sort({workoutDate: 1})
 		.then(workouts => res.json(workouts))
 		.catch(err => {
 			console.error(err);
-			res.status(500).json({ error: 'Internal server error, unable to find workout.'});
+			res.status(500).json({ error: 'Internal server error, unable to find workouts.'});
 		});
 });
 

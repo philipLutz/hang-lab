@@ -17,6 +17,7 @@
 		<button type="button" role="button" id="js-get-workouts">View Workout Log</button>
 		<button type="button" role="button" id="js-hide-workout-log">Hide Workout Log</button>
 		<button type="button" role="button" id="js-add-workout-button">Add a Workout</button>
+		<button type="button" role="button" id="js-show-progress-button">View Progress</button>
 		<button type="button" role="button" id="js-logout-button">Log Out</button>
 	</header>
 	<main role="main">
@@ -108,9 +109,24 @@
 				
 			</ul>
 		</section>
+
+		<section id="progress-chart" aria-hidden="true" hidden>
+			<form id="search-grip-form">
+				<fieldset>
+					<legend>Search for one of your grips to track your progress</legend>
+					<div>
+						<label>Grip Type</label>
+						<input id="grip-progress-search" class="input" type="text" placeholder="crimp" required>
+					</div>
+				</fieldset>
+			</form>
+			<canvas id="myChart" width="400" height="400"></canvas>
+			<button id="js-hide-progress-chart" type="button" role="button">Hide Progress Chart</button>
+		</section>
 		
 	</main>
 	<script type="text/javascript" src="./js/protected.js"></script>
 	<script type="text/javascript" src="./js/workouts.js"></script>
+	<script type="text/javascript" src="./js/progress-chart.js"></script>
 </body>
 </html>

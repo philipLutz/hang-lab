@@ -12,9 +12,14 @@ $('#js-get-workouts').click(event => {
 	$('#display-workout-log').empty();
 	$('#display-workout-log').attr("aria-hidden", "false");
 	$('#display-workout-log').removeAttr("hidden");
+	$('#add-workout-form').attr("aria-hidden", "true");
+	$('#add-workout-form').attr("hidden", "true");
 	$('#edit-workout-result').empty();
 	$('#add-workout-result').empty();
 	$('#delete-workout-result').empty();
+	$('#edit-workout-form').attr("aria-hidden", "true");
+	$('#edit-workout-form').attr("hidden", "true");
+	$('#js-edit-workout-form').empty();
 });
 
 $('#js-hide-workout-log').click(event => {
