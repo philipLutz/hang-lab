@@ -4,6 +4,17 @@
 
 var workoutIdToEdit = '';
 
+// Rolldown animation - increments the delay on each item.
+
+$('.rolldown-list li').each(function () {
+  var delay = ($(this).index() / 4) + 's';
+  $(this).css({
+    webkitAnimationDelay: delay,
+    mozAnimationDelay: delay,
+    animationDelay: delay
+  });
+});
+
 // Get New Workout
 
 $('#js-get-workouts').click(event => {
@@ -20,6 +31,8 @@ $('#js-get-workouts').click(event => {
 	$('#edit-workout-form').attr("aria-hidden", "true");
 	$('#edit-workout-form').attr("hidden", "true");
 	$('#js-edit-workout-form').empty();
+	$('#progress-chart').attr("aria-hidden", "true");
+	$('#progress-chart').attr("hidden", "true");
 });
 
 $('#js-hide-workout-log').click(event => {
@@ -82,16 +95,6 @@ function displayAllWorkouts(data) {
 	};
 }
 
-// Rolldown animation - increments the delay on each item.
-$('.rolldown-list li').each(function () {
-  var delay = ($(this).index() / 4) + 's';
-  $(this).css({
-    webkitAnimationDelay: delay,
-    mozAnimationDelay: delay,
-    animationDelay: delay
-  });
-});
-
 // Post New Workout
 
 $('#js-add-workout-button').click(event => {
@@ -101,6 +104,10 @@ $('#js-add-workout-button').click(event => {
 	$('#display-workout-log').attr("aria-hidden", "true");
 	$('#display-workout-log').attr("hidden", "true");
 	$('#display-workout-log').empty();
+	$('#progress-chart').attr("aria-hidden", "true");
+	$('#progress-chart').attr("hidden", "true");
+	$('#edit-workout-form').attr("aria-hidden", "true");
+	$('#edit-workout-form').attr("hidden", "true");
 });
 
 $('#js-hide-workout-form').click(event => {
@@ -206,48 +213,73 @@ $('#display-workout-log').on('click', '.js-edit-button', (event => {
 	$('#display-workout-log').attr("aria-hidden", "true");
 	$('#display-workout-log').attr("hidden", "true");
 	$('#display-workout-log').empty();
+	$('#progress-chart').attr("aria-hidden", "true");
+	$('#progress-chart').attr("hidden", "true");
 
 	$('#js-edit-workout-form').append(
 		`<fieldset>
 			<legend>Edit Workout</legend>
 
-			<label for="js-edit-date" class="label">Workout Date</label>
-			<input id="js-edit-date" class="input" type="text" value="${editDate}" required>
+			<div>
+				<label for="js-edit-date" class="label">Workout Date</label>
+				<input id="js-edit-date" class="input" type="text" value="${editDate}" required>
+			</div>
 
-			<label for="js-edit-grip" class="label">Grip Type</label>
-			<input id="js-edit-grip" class="input" type="text" value="${editGrip}" required>
+			<div>
+				<label for="js-edit-grip" class="label">Grip Type</label>
+				<input id="js-edit-grip" class="input" type="text" value="${editGrip}" required>
+			</div>
 
-			<label for="js-edit-size" class="label">Hold Size (millimeters)</label>
-			<input id="js-edit-size" class="input" type="text" value="${editHoldSize}" required>
+			<div>
+				<label for="js-edit-size" class="label">Hold Size (millimeters)</label>
+				<input id="js-edit-size" class="input" type="text" value="${editHoldSize}" required>
+			</div>
 
-			<label for="js-edit-sets" class="label">Number of Sets</label>
-			<input id="js-edit-sets" class="input" type="text" value="${editSets}" required>
+			<div>
+				<label for="js-edit-sets" class="label">Number of Sets</label>
+				<input id="js-edit-sets" class="input" type="text" value="${editSets}" required>
+			</div>
 
-			<label for="js-edit-set-rest" class="label" >Rest Between Sets (minutes)</label>
-			<input id="js-edit-set-rest" class="input" type="text" value="${editSetRest}" required>
+			<div>
+				<label for="js-edit-set-rest" class="label" >Rest Between Sets (minutes)</label>
+				<input id="js-edit-set-rest" class="input" type="text" value="${editSetRest}" required>
+			</div>
 
-			<label for="js-edit-reps" class="label">Number of Repetitions</label>
-			<input id="js-edit-reps" class="input" type="text" value="${editReps}" required>
+			<div>
+				<label for="js-edit-reps" class="label">Number of Repetitions</label>
+				<input id="js-edit-reps" class="input" type="text" value="${editReps}" required>
+			</div>
 
-			<label for="js-edit-rep-hang" class="label">Repetition Duration (seconds)</label>
-			<input id="js-edit-rep-hang" class="input" type="text" value="${editRepHang}" required>
+			<div>
+				<label for="js-edit-rep-hang" class="label">Repetition Duration (seconds)</label>
+				<input id="js-edit-rep-hang" class="input" type="text" value="${editRepHang}" required>
+			</div>
 
-			<label for="js-edit-rep-rest" class="label">Rest Between Repetitions (seconds)</label>
-			<input id="js-edit-rep-rest" class="input" type="text" value="${editRepRest}" required>
+			<div>
+				<label for="js-edit-rep-rest" class="label">Rest Between Repetitions (seconds)</label>
+				<input id="js-edit-rep-rest" class="input" type="text" value="${editRepRest}" required>
+			</div>
 
-			<label for="js-edit-load" class="label">Load Adjustment (pounds)</label>
-			<input id="js-edit-load" class="input" type="text" value="${editLoad}" required>
+			<div>
+				<label for="js-edit-load" class="label">Load Adjustment (pounds)</label>
+				<input id="js-edit-load" class="input" type="text" value="${editLoad}" required>
+			</div>
 
-			<label for="js-edit-bodyweight" class="label">Bodyweight (pounds)</label>
-			<input id="js-edit-bodyweight" class="input" type="text" value="${editBodyweight}" required>
+			<div>
+				<label for="js-edit-bodyweight" class="label">Bodyweight (pounds)</label>
+				<input id="js-edit-bodyweight" class="input" type="text" value="${editBodyweight}" required>
+			</div>
 
-			<label for="js-edit-comments" class="label">Comments on Performance</label>
-			<input id="js-edit-comments" class="input" type="text" value="${editComments}" required>
+			<div>
+				<label for="js-edit-comments" class="label">Comments on Performance</label>
+				<input id="js-edit-comments" class="input" type="text" value="${editComments}" required>
+			</div>
 
-			<button type="submit" class="button" id="js-edit-submit-button">Edit Workout</button>
-
-			<button type="button" class="button" id="js-hide-edit-workout">Close Edit Workout</button>
-
+			<div>
+				<button type="submit" class="button" id="js-edit-submit-button">Edit Workout</button>
+				<button type="button" class="button" id="js-hide-edit-workout">Close Edit Workout</button>
+			</div>
+			
 		</fieldset>`
 		)
 	

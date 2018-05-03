@@ -9,12 +9,23 @@ main {
 	color: rgba(0, 0, 0, 0.7);
 }
 
+html { 
+  background: url(https://liftandcook.com/wp-content/uploads/2017/03/Pine-Light-Wood-Grain-Texture-Table.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*Mobile and iPad Size*/
+
 h1 {
 	font-size: 20vw;
 	text-align: center;
   position: absolute;
   top: 20vw;
-  left:23%;
+  left: 22%;
   margin-top: 0;
   padding-top: 0;
 }
@@ -34,18 +45,20 @@ header button {
   margin: 0.5vw;
 }
 
-html { 
-  background: url(https://liftandcook.com/wp-content/uploads/2017/03/Pine-Light-Wood-Grain-Texture-Table.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-attachment: fixed;
+/*Action Results*/
+
+#results-action {
+  position: absolute;
+  top: 47vw;
+  font-size: 6vw;
+  text-align: center;
 }
+
+/*Display Log*/
 
 #display-workout-log {
   position: absolute;
-  top: 41vw;
+  top: 43vw;
   width: 90%; 
   left: 2%;
   text-align: center;
@@ -64,6 +77,8 @@ html {
 #display-workout-log h3 {
   font-size: 7vw;
 }
+
+/*Add Workout Form*/
 
 #add-workout-form {
   position: absolute;
@@ -113,8 +128,51 @@ fieldset {
   width: 37vw;
 }
 
+/*Edit Workout Form*/
 
+#edit-workout-form {
+  position: absolute;
+  top: 47vw;
+  width: 94%; 
+  left: 2%;
+  box-sizing: border-box;
+}
 
+#edit-workout-form legend {
+  font-size: 7vw;
+  text-align: center;
+}
+
+#edit-workout-form button {
+  font-size: 4vw;
+  /*background-color: rgba(0, 102, 255, 0.3);*/
+  background-color: rgba(129, 5, 252, 0.3);
+  color: black;
+  border-radius: 2vw;
+  border-color: rgba(129, 5, 252, 0.3);
+}
+
+#edit-workout-form div {
+  text-align: center;
+}
+
+#edit-workout-form label {
+  text-align: center;
+  font-size: 5.25vw;
+}
+
+#edit-workout-form input {
+  background: none;
+  border-radius: 2vw;
+  width: 26vw;
+  text-align: center;
+  font-size: 4.5vw;
+  height: 5.5vw;
+}
+
+#edit-workout-form #js-edit-comments {
+  width: 37vw;
+}
 
 
 
@@ -166,4 +224,107 @@ fieldset {
   }
 }
 
+/*Larger Screens*/
+
+@media only screen and (min-width: 770px) {
+
+  h1 {
+  font-size: 15vw;
+  text-align: center;
+  position: absolute;
+  top: 7vw;
+  left: 28%;
+  margin-top: 0;
+  padding-top: 0;
+  }
+
+  header button {
+  font-size: 3vw;
+  /*background-color: rgba(0, 102, 255, 0.3);*/
+  background-color: rgba(129, 5, 252, 0.3);
+  color: black;
+  border-radius: 2vw;
+  border-color: rgba(129, 5, 252, 0.3);
+  margin: 0.5vw;
+  }
+
+  #display-workout-log {
+  position: absolute;
+  top: 28vw;
+  width: 90%; 
+  left: 2%;
+  text-align: center;
+  font-size: 3vw;
+  }
+
+  #display-workout-log button {
+  font-size: 3vw;
+  /*background-color: rgba(0, 102, 255, 0.3);*/
+  background-color: rgba(129, 5, 252, 0.3);
+  color: black;
+  border-radius: 2vw;
+  border-color: rgba(129, 5, 252, 0.3);
+  }
+
+  #display-workout-log h3 {
+  font-size: 3.5vw;
+  }
+
+  #add-workout-form {
+  position: absolute;
+  top: 31vw;
+  width: 94%; 
+  left: 2%;
+  box-sizing: border-box;
+  font-size: 3vw;
+  }
+
+  fieldset {
+  border: 0;
+  }
+
+  #add-workout-form legend {
+  font-size: 4vw;
+  text-align: center;
+  }
+
+  #add-workout-form button {
+  font-size: 3vw;
+  /*background-color: rgba(0, 102, 255, 0.3);*/
+  background-color: rgba(129, 5, 252, 0.3);
+  color: black;
+  border-radius: 2vw;
+  border-color: rgba(129, 5, 252, 0.3);
+  }
+
+  #add-workout-form div {
+  text-align: center;
+  }
+
+  #add-workout-form label {
+  text-align: center;
+  font-size: 3.5vw;
+  }
+
+  #add-workout-form input {
+  background: none;
+  border-radius: 2vw;
+  width: 28vw;
+  text-align: center;
+  font-size: 3vw;
+  height: 3.5vw;
+  }
+
+  #add-workout-form #js-comments {
+  width: 37vw;
+  }  
+
+
+
+
+
+
+
+
+}
 

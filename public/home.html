@@ -7,6 +7,8 @@
 	<title>Hang Lab</title>
 	<meta name="description" content="Hangboarding training log">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<!-- <script src="moment.js"></script> -->
 	<link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
     <link href="./css/home.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -37,7 +39,7 @@
 					
 					<div>
 						<label for="js-date" class="label">Workout Date</label>
-						<input id="js-date" class="input" type="text" placeholder="9/3/2017" required>
+						<input id="js-date" class="input" type="text" placeholder="MM/DD/YYYY" required>
 					</div>
 
 					<div>
@@ -116,12 +118,17 @@
 					<legend>Search for one of your grips to track your progress</legend>
 					<div>
 						<label>Grip Type</label>
-						<input id="grip-progress-search" class="input" type="text" placeholder="crimp" required>
+						<input id="js-grip-progress-search" class="input" type="text" placeholder="crimp" required>
+						<button id="js-search-grip-button" type="submit" class="button">Get Progress</button>
+					</div>
+					<div>
+						
 					</div>
 				</fieldset>
 			</form>
+			<button id="js-hide-progress-button" type="button" role="button">Hide Progress Chart</button>
 			<canvas id="myChart" width="400" height="400"></canvas>
-			<button id="js-hide-progress-chart" type="button" role="button">Hide Progress Chart</button>
+			
 		</section>
 		
 	</main>
