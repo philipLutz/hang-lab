@@ -161,16 +161,13 @@ function processData(data) {
 
 var myChart = new Chart(ctx, {
     type: 'line',
-    title: {text: `Progress for ${gripSearchedProgress}`},
-    data: progressArrayGlobal
-    // options : {
-    //   scales: {
-    //     yAxes: [{
-    //       scaleLabel: {
-    //         display: true,
-    //         labelString: "Total load in pounds"
-    //       }
-    //     }]
-    //   }
-    // }
+    data: {datasets: [{data: progressArrayGlobal, backgroundColor: 'rgba(129, 5, 252, 0.3)'}]},
+    options : {
+    	title: {display: true, text: `Progress for ${gripSearchedProgress}`},
+      	scales: {
+        	yAxes: [{
+          		scaleLabel: {display: true, labelString: "Total load in pounds"}
+        	}]
+      	}
+    }
 });
