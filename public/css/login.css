@@ -1,0 +1,75 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: 'East Sea Dokdo', cursive;
+}
+
+main {
+	margin: 0;
+
+}
+
+html { 
+  background: url(http://eveningsends.com/wp-content/uploads/2017/11/EveningSends_Hangboard-1941.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+	position: absolute;
+	top: -6vw;
+	left: 13%;
+	font-size: 28vw;
+}
+
+#sign-up-button {
+	position: absolute;
+	right: 0;
+	font-size: 5vw;
+}
+
+fieldset {
+	border: none;
+}
+
+legend {
+	font-size: 17vw;
+}
+
+button {
+	font-size: 6vw;
+  	/*background-color: rgba(0, 102, 255, 0.3);*/
+  	background-color: rgba(129, 5, 252, 0.7);
+  	color: black;
+  	border-radius: 2vw;
+  	border-color: rgba(129, 5, 252, 0.7);
+}
+
+#incorrect-message {
+	position: absolute;
+	text-align: center;
+	top: 61vw;
+	left: 14%;
+	font-size: 6vw;
+}
+
+#js-login-form {
+	position: absolute;
+	top: 71vw;
+	text-align: center;
+	font-size: 5vw;
+}
+
+#js-login-form input {
+	background: none;
+	border-radius: 2vw;
+	font-size: 5vw;
+	height: 5.5vw;
+	text-align: center;
+}
+
+#js-login-form label {
+	font-size: 6vw;
+}

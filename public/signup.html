@@ -24,22 +24,32 @@
 			<form id="js-signup-form">
 				<fieldset>
 					<legend>Create Account</legend>
+					
+					<div>
+						<label for="js-signup-firstName" class="label"><b>First name</b></label>
+						<input id="js-signup-firstName" class="input" type="text" placeholder="Phil" required>
+					</div>
 
-					<label for="js-signup-firstName" class="label">First name</label>
-					<input id="js-signup-firstName" class="input" type="text" placeholder="Phil" required>
+					<div>
+						<label for="js-signup-lastName" class="label"><b>Last name</b></label>
+						<input id="js-signup-lastName" class="input" type="text" placeholder="Lutz" required>
+					</div>
 
-					<label for="js-signup-lastName" class="label">Last name</label>
-					<input id="js-signup-lastName" class="input" type="text" placeholder="Lutz" required>
+					<div>
+						<label for="js-signup-username" class="label"><b>Username</b></label>
+						<input id="js-signup-username" class="input" type="text" placeholder="p_a_lutz" required>
+					</div>
 
-					<label for="js-signup-username" class="label">Username</label>
-					<input id="js-signup-username" class="input" type="text" placeholder="p_a_lutz" required>
+					<div>
+						<label for="js-signup-email" class="label"><b>Email address</b></label>
+						<input id="js-signup-email" class="input" type="email" placeholder="philiplutz413@gmail.com" required>
+					</div>
 
-					<label for="js-signup-email" class="label">Email address</label>
-					<input id="js-signup-email" class="input" type="email" placeholder="philiplutz413@gmail.com" required>
-
-					<label for="js-signup-password" class="label">Password</label>
-					<input id="js-signup-password" class="input" type="password" minlength="10" placeholder="s3cr3tPa$$w0rd" required>
-					<p>Password needs to be at least 10 characters</p>
+					<div>
+						<label for="js-signup-password" class="label"><b>Password</b></label>
+						<input id="js-signup-password" class="input" type="password" minlength="10" placeholder="s3cr3tPa$$w0rd" required>
+						<p><b><i>Password needs to be at least 10 characters</i></b></p>
+					</div>
 
 					<button type="submit" class="button">Create Account</button>
 				</fieldset>

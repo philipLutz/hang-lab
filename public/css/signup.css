@@ -16,3 +16,62 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
+h1 {
+	position: absolute;
+	top: -6vw;
+	left: 13%;
+	font-size: 28vw;
+}
+
+#signup-result {
+	position: absolute;
+	text-align: center;
+	top: 31vw;
+	left: 3%;
+	font-size: 6vw;
+}
+
+#log-in-button {
+	position: absolute;
+	right: 0;
+	font-size: 5vw;
+}
+
+fieldset {
+	border: none;
+}
+
+legend {
+	font-size: 13vw;
+}
+
+button {
+	font-size: 6vw;
+  	/*background-color: rgba(0, 102, 255, 0.3);*/
+  	background-color: rgba(129, 5, 252, 0.7);
+  	color: black;
+  	border-radius: 2vw;
+  	border-color: rgba(129, 5, 252, 0.7);
+}
+
+#js-signup-form {
+	position: absolute;
+	top: 43vw;
+	left: 7%;
+	text-align: center;
+	font-size: 5vw;
+}
+
+#js-signup-form input {
+	background: none;
+	border-radius: 2vw;
+	font-size: 5vw;
+	height: 5.5vw;
+	text-align: center;
+}
+
+#js-signup-form label {
+	font-size: 6vw;
+}
+

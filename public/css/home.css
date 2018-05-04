@@ -229,97 +229,140 @@ fieldset {
 @media only screen and (min-width: 770px) {
 
   h1 {
-  font-size: 15vw;
-  text-align: center;
-  position: absolute;
-  top: 7vw;
-  left: 28%;
-  margin-top: 0;
-  padding-top: 0;
+    font-size: 15vw;
+    text-align: center;
+    position: absolute;
+    top: 7vw;
+    left: 28%;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   header button {
-  font-size: 3vw;
-  /*background-color: rgba(0, 102, 255, 0.3);*/
-  background-color: rgba(129, 5, 252, 0.3);
-  color: black;
-  border-radius: 2vw;
-  border-color: rgba(129, 5, 252, 0.3);
-  margin: 0.5vw;
+    font-size: 3vw;
+    /*background-color: rgba(0, 102, 255, 0.3);*/
+    background-color: rgba(129, 5, 252, 0.3);
+    color: black;
+    border-radius: 2vw;
+    border-color: rgba(129, 5, 252, 0.3);
+    margin: 0.5vw;
   }
 
   #display-workout-log {
-  position: absolute;
-  top: 28vw;
-  width: 90%; 
-  left: 2%;
-  text-align: center;
-  font-size: 3vw;
+    position: absolute;
+    top: 28vw;
+    width: 90%; 
+    left: 2%;
+    text-align: center;
+    font-size: 3vw;
   }
 
   #display-workout-log button {
-  font-size: 3vw;
-  /*background-color: rgba(0, 102, 255, 0.3);*/
-  background-color: rgba(129, 5, 252, 0.3);
-  color: black;
-  border-radius: 2vw;
-  border-color: rgba(129, 5, 252, 0.3);
+    font-size: 3vw;
+    /*background-color: rgba(0, 102, 255, 0.3);*/
+    background-color: rgba(129, 5, 252, 0.3);
+    color: black;
+    border-radius: 2vw;
+    border-color: rgba(129, 5, 252, 0.3);
   }
 
   #display-workout-log h3 {
-  font-size: 3.5vw;
+    font-size: 3.5vw;
   }
 
   #add-workout-form {
-  position: absolute;
-  top: 31vw;
-  width: 94%; 
-  left: 2%;
-  box-sizing: border-box;
-  font-size: 3vw;
+    position: absolute;
+    top: 28vw;
+    width: 94%; 
+    left: 2%;
+    box-sizing: border-box;
+    font-size: 3vw;
   }
 
   fieldset {
-  border: 0;
+    border: 0;
   }
 
   #add-workout-form legend {
-  font-size: 4vw;
-  text-align: center;
+    font-size: 4vw;
+    text-align: center;
   }
 
   #add-workout-form button {
-  font-size: 3vw;
-  /*background-color: rgba(0, 102, 255, 0.3);*/
-  background-color: rgba(129, 5, 252, 0.3);
-  color: black;
-  border-radius: 2vw;
-  border-color: rgba(129, 5, 252, 0.3);
+    font-size: 3vw;
+    /*background-color: rgba(0, 102, 255, 0.3);*/
+    background-color: rgba(129, 5, 252, 0.3);
+    color: black;
+    border-radius: 2vw;
+    border-color: rgba(129, 5, 252, 0.3);
   }
 
   #add-workout-form div {
-  text-align: center;
+    text-align: center;
   }
 
   #add-workout-form label {
-  text-align: center;
-  font-size: 3.5vw;
+    text-align: center;
+    font-size: 3.5vw;
   }
 
   #add-workout-form input {
-  background: none;
-  border-radius: 2vw;
-  width: 28vw;
-  text-align: center;
-  font-size: 3vw;
-  height: 3.5vw;
+    background: none;
+    border-radius: 2vw;
+    width: 28vw;
+    text-align: center;
+    font-size: 3vw;
+    height: 3.5vw;
   }
 
   #add-workout-form #js-comments {
-  width: 37vw;
+    width: 37vw;
   }  
 
+  #edit-workout-form {
+    position: absolute;
+    top: 28vw;
+    width: 94%; 
+    left: 2%;
+    box-sizing: border-box;
+    font-size: 3vw;
+  }
 
+  #edit-workout-form legend {
+    font-size: 4vw;
+    text-align: center;
+  }
+
+  #edit-workout-form button {
+    font-size: 3vw;
+    /*background-color: rgba(0, 102, 255, 0.3);*/
+    background-color: rgba(129, 5, 252, 0.3);
+    color: black;
+    border-radius: 2vw;
+    border-color: rgba(129, 5, 252, 0.3);
+  }
+
+  #edit-workout-form div {
+    text-align: center;
+  }
+
+  #edit-workout-form label {
+    text-align: center;
+    font-size: 3.5vw;
+  }
+
+  #edit-workout-form input {
+    background: none;
+    border-radius: 2vw;
+    width: 28vw;
+    text-align: center;
+    font-size: 3vw;
+    height: 3.5vw;
+  }
+
+  #edit-workout-form #js-edit-comments {
+    width: 37vw;
+  }
 
 
 

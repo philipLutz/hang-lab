@@ -34,7 +34,7 @@ function postNewUser(firstName, lastName, username, email, password) {
 		success: (data) => {
 			if(data) {
 				$('#signup-result').prepend(
-					`<div class='signup-success'>Sick! Your account has been created. You can login <a href='/'>here</a>.</div>`
+					`<div class='signup-success'><b>Sick! Your account has been created. You can login <a href='/'>here</a>.</b></div>`
 					)
 				$('input[id="js-signup-firstName"]').val('');
 				$('input[id="js-signup-lastName"]').val('');
@@ -45,7 +45,7 @@ function postNewUser(firstName, lastName, username, email, password) {
 		},
 		error: (...rest) => {
 			$('#signup-result').prepend(
-				`<div class='signup-failure'>Oops! Account creation failed. Please <a href='/'>login</a> or try signing up again.</div>`
+				`<div class='signup-failure'><b>Oops! Account creation failed. Please <a href='/'>login</a> or try signing up again.</b></div>`
 				)
 		}
 	});
