@@ -33,9 +33,8 @@ function postNewUser(firstName, lastName, username, email, password) {
 		}),
 		success: (data) => {
 			if(data) {
-				$('#signup-result').prepend(
-					`<div class='signup-success'><b>Sick! Your account has been created. You can login <a href='/'>here</a>.</b></div>`
-					)
+				location.href = '/login.html';
+
 				$('input[id="js-signup-firstName"]').val('');
 				$('input[id="js-signup-lastName"]').val('');
 				$('input[id="js-signup-username"]').val('');
@@ -56,6 +55,8 @@ function postNewUser(firstName, lastName, username, email, password) {
 $('#js-login-form').submit(event => {
 	event.preventDefault();
 	loginExistingUser();
+	$('#signup-success').attr("aria-hidden", "true");
+	$('#signup-success').attr("hidden", "true");
 });
 
 function loginExistingUser() {
