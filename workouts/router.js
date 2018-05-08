@@ -21,7 +21,7 @@ const {Workout} = require('./models');
 
 router.get('/', jwtAuth, (req, res) => {
 	Workout
-		.find({user: req.user._id})
+		.find({user: req.user.username})
 		.sort({workoutDate: -1})
 		.then(workouts => res.json(workouts))
 		.catch(err => {
@@ -45,10 +45,12 @@ router.get('/:grip', jwtAuth, (req, res) => {
 
 //Post a workout
 
+
 router.post('/', jwtAuth, (req, res) => {
+	console.log(req.user);
 	Workout
 		.create({
-			user: req.user._id,
+			user: req.user.username,
 			workoutDate: req.body.workoutDate,
 			grip: req.body.grip,
 			holdSize: req.body.holdSize,

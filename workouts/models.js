@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const workoutSchema = new mongoose.Schema({
-	user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+	user: { type: String, required: true },
 	workoutDate: { type: String, required: true },
 	grip: { type: String, required: true },
 	holdSize: { type: Number, required: true },
