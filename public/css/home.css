@@ -47,9 +47,10 @@ header button {
 
 /*Action Results*/
 
-#results-action {
+#action-results {
   position: absolute;
   top: 47vw;
+  left: 13%;
   font-size: 6vw;
   text-align: center;
 }
@@ -60,7 +61,7 @@ header button {
   position: absolute;
   top: 43vw;
   width: 90%; 
-  left: 2%;
+  left: 5%;
   text-align: center;
   font-size: 6vw;
 }
@@ -122,6 +123,16 @@ fieldset {
   text-align: center;
   font-size: 4.5vw;
   height: 5.5vw;
+}
+
+option {
+  font-size: 4.5vw;
+  background: none;
+}
+
+select {
+  font-size: 4.5vw;
+  background: none;
 }
 
 #add-workout-form #js-comments {
@@ -233,7 +244,7 @@ fieldset {
     text-align: center;
     position: absolute;
     top: 7vw;
-    left: 28%;
+    left: 30%;
     margin-top: 0;
     padding-top: 0;
   }
@@ -252,7 +263,7 @@ fieldset {
     position: absolute;
     top: 28vw;
     width: 90%; 
-    left: 2%;
+    left: 5%;
     text-align: center;
     font-size: 3vw;
   }
@@ -274,13 +285,23 @@ fieldset {
     position: absolute;
     top: 28vw;
     width: 94%; 
-    left: 2%;
+    left: 4%;
     box-sizing: border-box;
     font-size: 3vw;
   }
 
   fieldset {
     border: 0;
+  }
+
+  option {
+    font-size: 3vw;
+    background: none;
+  }
+
+  select {
+    font-size: 3vw;
+    background: none;
   }
 
   #add-workout-form legend {
@@ -323,7 +344,7 @@ fieldset {
     position: absolute;
     top: 28vw;
     width: 94%; 
-    left: 2%;
+    left: 4%;
     box-sizing: border-box;
     font-size: 3vw;
   }

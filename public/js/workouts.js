@@ -124,7 +124,7 @@ $('#js-add-workout-form').submit(event => {
 
 function addNewWorkout() {
 	let workoutDate = $('input[id="js-date"]').val();
-	let grip = $('input[id="js-grip"]').val();
+	let grip = $('select[id="js-grip"] option:selected').val();
 	let holdSize = $('input[id="js-size"]').val();
 	let sets = $('input[id="js-sets"]').val();
 	let setRest = $('input[id="js-set-rest"]').val();
@@ -221,57 +221,63 @@ $('#display-workout-log').on('click', '.js-edit-button', (event => {
 			<legend>Edit Workout</legend>
 
 			<div>
-				<label for="js-edit-date" class="label">Workout Date</label>
+				<label for="js-edit-date" class="label">Workout Date:</label>
 				<input id="js-edit-date" class="input" type="text" value="${editDate}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-grip" class="label">Grip Type</label>
-				<input id="js-edit-grip" class="input" type="text" value="${editGrip}" required>
+				<label for="js-edit-grip" class="label">Grip Type:</label>
+				<select id="js-edit-grip" class="input" name="select-grip" required>
+					<option value="crimp">Crimp</option>
+					<option value="open">Open</option>
+					<option value="IM">IM pocket</option>
+					<option value="MR">MR pocket</option>
+					<option value="mono">Mono pocket</option>
+				</select>
 			</div>
 
 			<div>
-				<label for="js-edit-size" class="label">Hold Size (millimeters)</label>
+				<label for="js-edit-size" class="label">Hold Size (millimeters):</label>
 				<input id="js-edit-size" class="input" type="text" value="${editHoldSize}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-sets" class="label">Number of Sets</label>
+				<label for="js-edit-sets" class="label">Number of Sets:</label>
 				<input id="js-edit-sets" class="input" type="text" value="${editSets}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-set-rest" class="label" >Rest Between Sets (minutes)</label>
+				<label for="js-edit-set-rest" class="label" >Rest Between Sets (minutes):</label>
 				<input id="js-edit-set-rest" class="input" type="text" value="${editSetRest}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-reps" class="label">Number of Repetitions</label>
+				<label for="js-edit-reps" class="label">Number of Repetitions:</label>
 				<input id="js-edit-reps" class="input" type="text" value="${editReps}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-rep-hang" class="label">Repetition Duration (seconds)</label>
+				<label for="js-edit-rep-hang" class="label">Repetition Duration (seconds):</label>
 				<input id="js-edit-rep-hang" class="input" type="text" value="${editRepHang}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-rep-rest" class="label">Rest Between Repetitions (seconds)</label>
+				<label for="js-edit-rep-rest" class="label">Rest Between Repetitions (seconds):</label>
 				<input id="js-edit-rep-rest" class="input" type="text" value="${editRepRest}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-load" class="label">Load Adjustment (pounds)</label>
+				<label for="js-edit-load" class="label">Load Adjustment (pounds):</label>
 				<input id="js-edit-load" class="input" type="text" value="${editLoad}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-bodyweight" class="label">Bodyweight (pounds)</label>
+				<label for="js-edit-bodyweight" class="label">Bodyweight (pounds):</label>
 				<input id="js-edit-bodyweight" class="input" type="text" value="${editBodyweight}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-comments" class="label">Comments on Performance</label>
+				<label for="js-edit-comments" class="label">Comments on Performance:</label>
 				<input id="js-edit-comments" class="input" type="text" value="${editComments}" required>
 			</div>
 
@@ -307,7 +313,7 @@ $('#edit-workout-form').on('click', '#js-edit-submit-button', (event => {
 
 function editWorkout() {
 	let workoutDateNew = $('input[id="js-edit-date"]').val();
-	let gripNew = $('input[id="js-edit-grip"]').val();
+	let gripNew = $('select[id="js-edit-grip"] option:selected').val();
 	let holdSizeNew = $('input[id="js-edit-size"]').val();
 	let setsNew = $('input[id="js-edit-sets"]').val();
 	let setRestNew = $('input[id="js-edit-set-rest"]').val();

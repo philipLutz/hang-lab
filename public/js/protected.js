@@ -13,7 +13,6 @@ function authorizeUser() {
 	if (!token) {
 		location.href = '/';
 	}
-	console.log(token);
 };
 
 $(() => {
