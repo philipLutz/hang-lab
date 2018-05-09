@@ -2,22 +2,24 @@
 
 var ctx = $("#myChart");
 
-// // Create Global Variables
+// Create Global Variables
+
+var gripSearchedProgress = '';
 
 
-// var progressArrayGlobal = '';
-// var gripSearchedProgress = '';
-// // var workoutDateProgress = '';
-// // var holdSizeProgress = '';
-// // var bodyweightProgress = '';
-// // var loadProgress = '';
-// // var setsProgress = '';
-// // var repsProgress = '';
-// // var repHangProgress = '';
-// // var repRestProgress = '';
-// // var setRestProgress = '';
-// // var commentsProgress = '';
-// // var totalLoadProgress = '';
+// let totalLoadProgress = [];
+// let progressArrayGlobal = [];
+// let workoutDateProgress = [];
+// var holdSizeProgress = '';
+// var bodyweightProgress = '';
+// var loadProgress = '';
+// var setsProgress = '';
+// var repsProgress = '';
+// var repHangProgress = '';
+// var repRestProgress = '';
+// var setRestProgress = '';
+// var commentsProgress = '';
+
 
 
 $('#js-show-progress-button').click(event => {
@@ -42,150 +44,177 @@ $('#js-hide-progress-button').click(event => {
 	$('#progress-chart').attr("hidden", "true");
 });
 
-// $('#search-grip-form').submit(event => {
-// 	event.preventDefault();
-// 	console.log('progress clicked')
-// 	let gripInput = $('input[id="js-grip-progress-search"]').val();
-// 	window.gripSearchedProgress = gripInput;
-// 	getProgressChartData(gripInput);
-// });
+$('#search-grip-form').submit(event => {
+	event.preventDefault();
+	console.log('progress clicked')
+	let gripInput = $('input[id="js-grip-progress-search"]').val();
+	window.gripSearchedProgress = gripInput;
+	getProgressChartData(gripInput);
+});
 
-// function getProgressChartData(gripInput) {
+function getProgressChartData(gripInput) {
 
-// 	const token = localStorage.getItem('authToken');
+	const token = localStorage.getItem('authToken');
 
-// 	$.ajax({
-// 		url: `/api/workouts/${gripInput}`,
-// 		type: 'GET',
-// 		dataType: 'json',
-// 		headers: {
-// 			Authorization: `Bearer ${token}`
-// 		},
-// 		success: function(data) {
-// 			processData(data);
-// 			$('input[id="js-grip-progress-search"]').val('');
-// 		},
-// 		error: function(data) {
-// 			console.log('error');
-// 		}
-// 	});
-// };
+	$.ajax({
+		url: `/api/workouts/${gripInput}`,
+		type: 'GET',
+		dataType: 'json',
+		headers: {
+			Authorization: `Bearer ${token}`
+		},
+		success: function(data) {
+			processData(data);
+			$('input[id="js-grip-progress-search"]').val('');
+		},
+		error: function(data) {
+			console.log('error');
+		}
+	});
+};
 
-// // Loop through data to create arrays for the data points on the chart
+// Loop through data to create arrays for the data points on the chart
 
-// function processData(data) {
+function processData(data) {
 	
-// 	let workoutDateArray = [];
-// 	let holdSizeArray = [];
-// 	let bodyweightArray = [];
-// 	let loadArray = [];
-// 	let setsArray = [];
-// 	let repsArray = [];
-// 	let repHangArray = [];
-// 	let repRestArray = [];
-// 	let setRestArray = [];
-// 	let commentsArray = [];
+	let workoutDateArray = [];
+	let holdSizeArray = [];
+	let bodyweightArray = [];
+	let loadArray = [];
+	let setsArray = [];
+	let repsArray = [];
+	let repHangArray = [];
+	let repRestArray = [];
+	let setRestArray = [];
+	let commentsArray = [];
 
-// 	for (let i=0; i < data.length; i++) {
-// 		workoutDateArray.push(data[i].workoutDate);
-// 	};
+	for (let i=0; i < data.length; i++) {
+		workoutDateArray.push(data[i].workoutDate);
+	};
 
-// 	for (let i=0; i < data.length; i++) {
-// 		holdSizeArray.push(data[i].holdSize);
-// 	};
+	for (let i=0; i < data.length; i++) {
+		holdSizeArray.push(data[i].holdSize);
+	};
 
-// 	for (let i=0; i < data.length; i++) {
-// 		bodyweightArray.push(data[i].bodyweight);
-// 	};
+	for (let i=0; i < data.length; i++) {
+		bodyweightArray.push(data[i].bodyweight);
+	};
 
-// 	for (let i=0; i < data.length; i++) {
-// 		loadArray.push(data[i].load);
-// 	};
+	for (let i=0; i < data.length; i++) {
+		loadArray.push(data[i].load);
+	};
 
-// 	for (let i=0; i < data.length; i++) {
-// 		setsArray.push(data[i].sets);
-// 	};
+	for (let i=0; i < data.length; i++) {
+		setsArray.push(data[i].sets);
+	};
 
-// 	for (let i=0; i < data.length; i++) {
-// 		repsArray.push(data[i].reps);
-// 	};
+	for (let i=0; i < data.length; i++) {
+		repsArray.push(data[i].reps);
+	};
 
-// 	for (let i=0; i < data.length; i++) {
-// 		repHangArray.push(data[i].repHang);
-// 	};
+	for (let i=0; i < data.length; i++) {
+		repHangArray.push(data[i].repHang);
+	};
 
-// 	for (let i=0; i < data.length; i++) {
-// 		repRestArray.push(data[i].repRest);
-// 	};
+	for (let i=0; i < data.length; i++) {
+		repRestArray.push(data[i].repRest);
+	};
 
-// 	for (let i=0; i < data.length; i++) {
-// 		setRestArray.push(data[i].setRest);
-// 	};
+	for (let i=0; i < data.length; i++) {
+		setRestArray.push(data[i].setRest);
+	};
 
-// 	for (let i=0; i < data.length; i++) {
-// 		commentsArray.push(data[i].comments);
-// 	};
+	for (let i=0; i < data.length; i++) {
+		commentsArray.push(data[i].comments);
+	};
 
-// 	// window.workoutDateProgress = workoutDateArray;
-// 	// window.holdSizeProgress = holdSizeArray;
-// 	// window.bodyweightProgress = bodyweightArray;
-// 	// window.loadProgress = loadArray;
-// 	// window.setsProgress = setsArray;
-// 	// window.repsProgress = repsArray;
-// 	// window.repHangProgress = repHangArray;
-// 	// window.repRestProgress = repRestArray;
-// 	// window.setRestProgress = setRestArray;
-// 	// window.commentsProgress = commentsArray;
+	window.workoutDateProgress = workoutDateArray;
+	window.holdSizeProgress = holdSizeArray;
+	window.bodyweightProgress = bodyweightArray;
+	window.loadProgress = loadArray;
+	window.setsProgress = setsArray;
+	window.repsProgress = repsArray;
+	window.repHangProgress = repHangArray;
+	window.repRestProgress = repRestArray;
+	window.setRestProgress = setRestArray;
+	window.commentsProgress = commentsArray;
 
-// 	// console.log(workoutDateProgress, holdSizeProgress, bodyweightProgress, loadProgress, setsProgress, repsProgress, repHangProgress, repRestProgress, setRestProgress, commentsProgress);
+	// console.log(workoutDateProgress, holdSizeProgress, bodyweightProgress, loadProgress, setsProgress, repsProgress, repHangProgress, repRestProgress, setRestProgress, commentsProgress);
 
-// 	let totalLoadArray = [];
-// 	let progressArray = [];
+	let totalLoadArray = [];
+	let progressArray = [];
 
-// 	for (let i=0; i < data.length; i++) {
-// 		totalLoadArray.push(loadArray[i]+bodyweightArray[i]);
-// 	}
+	for (let i=0; i < data.length; i++) {
+		totalLoadArray.push(loadArray[i]+bodyweightArray[i]);
+	}
 
-// 	for (let i=0; i < data.length; i++) {
-// 		progressArray.push({x: i+1, y: totalLoadArray[i]});
-// 	}
+	for (let i=0; i < data.length; i++) {
+		progressArray.push({x: i+1, y: totalLoadArray[i]});
+	}
 
 	
-// 	window.progressArrayGlobal = progressArray;
+	window.progressArrayGlobal = progressArray;
+	window.totalLoadProgress = totalLoadArray;
 
-// 	console.log(progressArrayGlobal, gripSearchedProgress);
+	renderChart(workoutDateArray, totalLoadArray, gripSearchedProgress);
+	
 
 
-// };
+};
 
-var data = {
-	labels: [10, 15, 20, 17, 5, 3],
-  	datasets: [{
-  		data: [20, 10, 5, 6, 23, 18]
-  	}]
+console.log(workoutDateProgress, totalLoadProgress, gripSearchedProgress);
+
+function renderChart(workoutDateProgress, totalLoadProgress, gripSearchedProgress) {
+	
+	console.log(workoutDateProgress, totalLoadProgress, gripSearchedProgress);
+
+	let data = {
+		labels: workoutDateProgress,
+		datasets: [{data: totalLoadProgress}]
+	}
+
+	let myChart = new Chart(ctx, {
+		type: 'line',
+		data: data,
+		options : {
+    	title: {display: true, text: `Progress for ${gripSearchedProgress}`},
+      	scales: {
+        	yAxes: [{
+          		scaleLabel: {display: true, labelString: "Total load in pounds"}
+        	}]
+      	}
+    }
+	})
 }
 
+// var data = {
+// 	labels: [1, 2, 3, 4, 5],
+//   	datasets: [{
+//   		data: [5, 4, 3, 2, 1]
+//   	}]
+// }
 
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: data
-    // data: [{
-    //     x: 10,
-    //     y: 20
-    // }, {
-    //     x: 15,
-    //     y: 10
-    // }],
-    // data: {datasets: [{data: progressArrayGlobal, backgroundColor: 'rgba(129, 5, 252, 0.3)'}]},
-    // options : {
-    // 	title: {display: true, text: `Progress for ${gripSearchedProgress}`},
-    //   	scales: {
-    //     	yAxes: [{
-    //       		scaleLabel: {display: true, labelString: "Total load in pounds"}
-    //     	}]
-    //   	}
-    // }
-});
+
+// var myChart = new Chart(ctx, {
+//     type: 'line',
+//     data: data,
+//     // data: [{
+//     //     x: 10,
+//     //     y: 20
+//     // }, {
+//     //     x: 15,
+//     //     y: 10
+//     // }],
+//     // data: {datasets: [{data: progressArrayGlobal, backgroundColor: 'rgba(129, 5, 252, 0.3)'}]},
+//     options : {
+//     	title: {display: true, text: `Progress for ${gripSearchedProgress}`},
+//       	scales: {
+//         	yAxes: [{
+//           		scaleLabel: {display: true, labelString: "Total load in pounds"}
+//         	}]
+//       	}
+//     }
+// });
 
 
 

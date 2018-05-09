@@ -34,6 +34,7 @@ router.get('/', jwtAuth, (req, res) => {
 
 router.get('/:grip', jwtAuth, (req, res) => {
 	Workout
+		.find({user: req.user.username})
 		.find({grip: req.params.grip})
 		.sort({workoutDate: 1})
 		.then(workouts => res.json(workouts))
