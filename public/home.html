@@ -21,6 +21,7 @@
 		<button type="button" role="button" id="js-logout-button">Log Out</button>
 	</header>
 	<main role="main">
+		
 		<h1 role="heading">Hang Lab</h1>
 
 		<section id="action-results">
@@ -121,8 +122,15 @@
 				<fieldset>
 					<legend>Search for one of your grips to track your progress</legend>
 					<div>
-						<label>Grip Type</label>
-						<input id="js-grip-progress-search" class="input" type="text" placeholder="crimp" required>
+						<label>Grip Type:</label>
+						<!-- <input id="js-grip-progress-search" class="input" type="text" placeholder="crimp" required> -->
+						<select id="js-grip-progress-search" class="input" name="select-grip-progress" required>
+							<option value="crimp">Crimp</option>
+							<option value="open">Open</option>
+							<option value="IM">IM pocket</option>
+							<option value="MR">MR pocket</option>
+							<option value="mono">Mono pocket</option>
+						</select>
 						<button id="js-search-grip-button" type="submit" class="button">Get Progress</button>
 					</div>
 					<div>
@@ -130,9 +138,12 @@
 					</div>
 				</fieldset>
 			</form>
-			<button id="js-hide-progress-button" type="button" role="button">Hide Progress Chart</button>
-			<canvas id="myChart" width="400" height="400"></canvas>
 			
+			<button id="js-hide-progress-button" type="button" role="button">Hide Progress Chart</button>
+			
+			<div class="chart-container">
+				<canvas id="myChart"></canvas>
+			</div>
 		</section>
 		
 	</main>

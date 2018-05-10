@@ -47,7 +47,7 @@ $('#js-hide-progress-button').click(event => {
 $('#search-grip-form').submit(event => {
 	event.preventDefault();
 	console.log('progress clicked')
-	let gripInput = $('input[id="js-grip-progress-search"]').val();
+	let gripInput = $('select[id="js-grip-progress-search"] option:selected').val();
 	window.gripSearchedProgress = gripInput;
 	getProgressChartData(gripInput);
 });
@@ -65,7 +65,6 @@ function getProgressChartData(gripInput) {
 		},
 		success: function(data) {
 			processData(data);
-			$('input[id="js-grip-progress-search"]').val('');
 		},
 		error: function(data) {
 			console.log('error');
@@ -162,59 +161,40 @@ function processData(data) {
 
 };
 
-console.log(workoutDateProgress, totalLoadProgress, gripSearchedProgress);
-
 function renderChart(workoutDateProgress, totalLoadProgress, gripSearchedProgress) {
 	
 	console.log(workoutDateProgress, totalLoadProgress, gripSearchedProgress);
 
+
+	Chart.defaults.global.defaultFontFamily = "East Sea Dokdo";
+
 	let data = {
 		labels: workoutDateProgress,
-		datasets: [{data: totalLoadProgress}]
+		datasets: [{data: totalLoadProgress, backgroundColor: 'rgba(129, 5, 252, 0.3)'}]
 	}
 
 	let myChart = new Chart(ctx, {
 		type: 'line',
 		data: data,
 		options : {
-    	title: {display: true, text: `Progress for ${gripSearchedProgress}`},
-      	scales: {
-        	yAxes: [{
-          		scaleLabel: {display: true, labelString: "Total load in pounds"}
-        	}]
-      	}
-    }
+    		title: {display: false},
+      		scales: {
+        		yAxes: [{
+          			scaleLabel: {display: true, labelString: "Total load in pounds", fontSize: 28, fontColor: '#000', gridLines: {fontColor: '#000'}, ticks: {fontColor: '#000'}}
+        		}],
+        		xAxes: [{
+          			scaleLabel: {display: true, labelString: "Workout Dates", fontSize: 28, fontColor: '#000', gridLines: {fontColor: '#000'}, ticks: {fontColor: '#000'}}
+        		}]
+      		},
+      		responsive: true,
+      		maintainAspectRatio: false,
+      		legend: {display: false}
+      		
+      		
+    	}
 	})
 }
 
-// var data = {
-// 	labels: [1, 2, 3, 4, 5],
-//   	datasets: [{
-//   		data: [5, 4, 3, 2, 1]
-//   	}]
-// }
-
-
-// var myChart = new Chart(ctx, {
-//     type: 'line',
-//     data: data,
-//     // data: [{
-//     //     x: 10,
-//     //     y: 20
-//     // }, {
-//     //     x: 15,
-//     //     y: 10
-//     // }],
-//     // data: {datasets: [{data: progressArrayGlobal, backgroundColor: 'rgba(129, 5, 252, 0.3)'}]},
-//     options : {
-//     	title: {display: true, text: `Progress for ${gripSearchedProgress}`},
-//       	scales: {
-//         	yAxes: [{
-//           		scaleLabel: {display: true, labelString: "Total load in pounds"}
-//         	}]
-//       	}
-//     }
-// });
 
 
 
