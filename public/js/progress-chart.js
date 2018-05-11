@@ -6,21 +6,7 @@ var ctx = $("#myChart");
 
 var gripSearchedProgress = '';
 
-
-// let totalLoadProgress = [];
-// let progressArrayGlobal = [];
-// let workoutDateProgress = [];
-// var holdSizeProgress = '';
-// var bodyweightProgress = '';
-// var loadProgress = '';
-// var setsProgress = '';
-// var repsProgress = '';
-// var repHangProgress = '';
-// var repRestProgress = '';
-// var setRestProgress = '';
-// var commentsProgress = '';
-
-
+// Click event
 
 $('#js-show-progress-button').click(event => {
 	event.preventDefault();
@@ -46,7 +32,6 @@ $('#js-hide-progress-button').click(event => {
 
 $('#search-grip-form').submit(event => {
 	event.preventDefault();
-	console.log('progress clicked')
 	let gripInput = $('select[id="js-grip-progress-search"] option:selected').val();
 	window.gripSearchedProgress = gripInput;
 	getProgressChartData(gripInput);
@@ -127,33 +112,11 @@ function processData(data) {
 		commentsArray.push(data[i].comments);
 	};
 
-	window.workoutDateProgress = workoutDateArray;
-	window.holdSizeProgress = holdSizeArray;
-	window.bodyweightProgress = bodyweightArray;
-	window.loadProgress = loadArray;
-	window.setsProgress = setsArray;
-	window.repsProgress = repsArray;
-	window.repHangProgress = repHangArray;
-	window.repRestProgress = repRestArray;
-	window.setRestProgress = setRestArray;
-	window.commentsProgress = commentsArray;
-
-	// console.log(workoutDateProgress, holdSizeProgress, bodyweightProgress, loadProgress, setsProgress, repsProgress, repHangProgress, repRestProgress, setRestProgress, commentsProgress);
-
 	let totalLoadArray = [];
-	let progressArray = [];
 
 	for (let i=0; i < data.length; i++) {
 		totalLoadArray.push(loadArray[i]+bodyweightArray[i]);
 	}
-
-	for (let i=0; i < data.length; i++) {
-		progressArray.push({x: i+1, y: totalLoadArray[i]});
-	}
-
-	
-	window.progressArrayGlobal = progressArray;
-	window.totalLoadProgress = totalLoadArray;
 
 	renderChart(workoutDateArray, totalLoadArray, gripSearchedProgress);
 	
@@ -162,11 +125,11 @@ function processData(data) {
 };
 
 function renderChart(workoutDateProgress, totalLoadProgress, gripSearchedProgress) {
-	
-	console.log(workoutDateProgress, totalLoadProgress, gripSearchedProgress);
 
-
-	Chart.defaults.global.defaultFontFamily = "East Sea Dokdo";
+	Chart.defaults.global.defaultFontFamily = 'East Sea Dokdo';
+	Chart.defaults.global.defaultFontColor = 'rgba(0, 0, 0, 0.7)';
+	Chart.defaults.global.defaultFontSize = 20;
+	Chart.defaults.global.elements.line.borderColor = 'rgba(129, 5, 252, 0.9)'
 
 	let data = {
 		labels: workoutDateProgress,
@@ -180,10 +143,10 @@ function renderChart(workoutDateProgress, totalLoadProgress, gripSearchedProgres
     		title: {display: false},
       		scales: {
         		yAxes: [{
-          			scaleLabel: {display: true, labelString: "Total load in pounds", fontSize: 28, fontColor: '#000', gridLines: {fontColor: '#000'}, ticks: {fontColor: '#000'}}
+          			scaleLabel: {display: true, labelString: "Total load in pounds"}, fontColor: 'rgba(0, 0, 0, 0.7)', fontSize: 28, gridLines: {color: 'rgba(0, 0, 0, 0.7)'}, ticks: {color: 'rgba(0, 0, 0, 0.7)'}
         		}],
         		xAxes: [{
-          			scaleLabel: {display: true, labelString: "Workout Dates", fontSize: 28, fontColor: '#000', gridLines: {fontColor: '#000'}, ticks: {fontColor: '#000'}}
+          			scaleLabel: {display: true, labelString: "Workout Dates"}, fontColor: 'rgba(0, 0, 0, 0.7)', fontSize: 28, gridLines: {color: 'rgba(0, 0, 0, 0.7)'}, ticks: {color: 'rgba(0, 0, 0, 0.7)'}
         		}]
       		},
       		responsive: true,
