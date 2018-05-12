@@ -125,22 +125,60 @@ describe('/api/workouts', function () {
 
     describe('PUT', function () {
       it('Should edit an existing workout', function () {
-        it('Should add a workout', function () {
         const token = jwt.sign({user: {username: 'exampleUserName'}}, JWT_SECRET, {expiresIn: 10000});
-        const updateWorkout = {}
+        const updateWorkout = {
+          user: user,
+          workoutDate: workoutDate,
+          grip: "mono",
+          holdSize: holdSize,
+          sets: sets,
+          setRest: setRest,
+          reps: reps,
+          repHang: repHang,
+          repRest: repRest,
+          load: load,
+          bodyweight: bodyweight,
+          comments: comments
+        }
         return Workout
           .findOne()
           .then(function(res) {
-
+            updateWorkout._id = res._id;
+            return chai.request(app)
+              .put(`/api/workouts/${res._id}`)
+              .set('Authorization', `Bearer ${token}`)
+              .send(updateWorkout)
           })
-          
+          .then(function(res) {
+            expect(res).to.have.status(201);
+            expect(res).to.be.json;
+            return Workout.findById(updateWorkout._id)
+          })
+          .then(function(res) {
+            expect(res.grip).to.equal(updateWorkout.grip)
+          });
         });
       });
-    });
 
     describe('DELETE', function () {
       it('Should delete an existing workout', function () {
-
+        const token = jwt.sign({user: {username: 'exampleUserName'}}, JWT_SECRET, {expiresIn: 10000});
+        let workoutToDelete;
+        return Workout
+          .findOne()
+          .then(function(res) {
+            workoutToDelete = res._id;
+            return chai.request(app)
+              .delete(`/api/workouts/${workoutToDelete}`)
+              .set('Authorization', `Bearer ${token}`)
+          })
+          .then(function(res) {
+            expect(res).to.have.status(204);
+            return Workout.findById(workoutToDelete)
+          })
+          .then(function(res) {
+            expect(res).to.not.exist;
+          });
       });
     });
 
