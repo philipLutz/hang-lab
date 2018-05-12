@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+	<title>Hang Lab</title>
+	<meta name="description" content="Hangboarding training log">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
+    <link href="./css/login.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<header>
+		<button type="button" role="button" id="sign-up-button">Sign Up</button>
+	</header>
+	<main role="main">
+		<h1 role="heading">Hang Lab</h1>
+		<h3 role="heading"></h3>
+		<section>
+			<form id="js-login-form">
+				<fieldset>
+					<legend>Login</legend>
+
+					<div>
+						<input id="js-login-username" class="input" type="username" placeholder="username" required>
+					</div>
+					<div>
+                		<input id="js-login-password" class="input" type="password" placeholder="password" required>
+                	</div>
+
+                	<button class="button" type="submit">Login</button>
+				</fieldset>
+			</form>
+			<div id="incorrect-message" class="alert" aria-hidden="true" hidden><b>Hmmm...incorrect username and/or password</b></div>
+		</section>
+		
+	</main>
+	<script type="text/javascript" src="./js/users.js"></script>
+</body>
+</html>

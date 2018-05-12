@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+	<title>Hang Lab</title>
+	<meta name="description" content="Hangboarding training log">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<!-- <script src="moment.js"></script> -->
+	<link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
+    <link href="./css/home.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<header>
+		<button type="button" role="button" id="js-get-workouts">View Workout Log</button>
+		<button type="button" role="button" id="js-hide-workout-log">Hide Workout Log</button>
+		<button type="button" role="button" id="js-add-workout-button">Add a Workout</button>
+		<button type="button" role="button" id="js-show-progress-button">View Progress</button>
+		<button type="button" role="button" id="js-logout-button">Log Out</button>
+	</header>
+	<main role="main">
+		
+		<h1 role="heading">Hang Lab</h1>
+
+		<section id="action-results">
+			<div id="delete-workout-result"></div>
+			<div id="add-workout-result"></div>
+			<div id="edit-workout-result"></div>
+		</section>
+
+		<section id="add-workout-form" aria-hidden="true" hidden>
+			
+			<form id="js-add-workout-form">
+				<fieldset>
+					<legend>Add a Workout</legend>
+					
+					<div>
+						<label for="js-date" class="label">Workout Date:</label>
+						<input id="js-date" class="input" type="text" placeholder="MM/DD/YYYY" required>
+					</div>
+
+					<div>
+						<label for="js-grip" class="label">Grip Type:</label>
+						<select id="js-grip" class="input" name="select-grip" required>
+							<option value="crimp">Crimp</option>
+							<option value="open">Open</option>
+							<option value="IM">IM pocket</option>
+							<option value="MR">MR pocket</option>
+							<option value="mono">Mono pocket</option>
+						</select>
+					</div>
+
+					<div>
+						<label for="js-size" class="label">Hold Size (millimeters):</label>
+						<input id="js-size" class="input" type="text" placeholder="15" required>
+					</div>
+
+					<div>
+						<label for="js-sets" class="label">Number of Sets:</label>
+						<input id="js-sets" class="input" type="text" placeholder="3" required>
+					</div>
+
+					<div>
+						<label for="js-set-rest" class="label">Rest Between Sets (minutes):</label>
+						<input id="js-set-rest" class="input" type="text" placeholder="4" required>
+					</div>
+
+					<div>
+						<label for="js-reps" class="label">Number of Repetitions:</label>
+						<input id="js-reps" class="input" type="text" placeholder="6" required>
+					</div>
+
+					<div>
+						<label for="js-rep-hang" class="label">Repetition Duration (seconds):</label>
+						<input id="js-rep-hang" class="input" type="text" placeholder="6" required>
+					</div>
+
+					<div>
+						<label for="js-rep-rest" class="label">Rest Between Repetitions (seconds):</label>
+						<input id="js-rep-rest" class="input" type="text" placeholder="4" required>
+					</div>
+
+					<div>
+						<label for="js-load" class="label">Load Adjustment (pounds):</label>
+						<input id="js-load" class="input" type="text" placeholder="10" required>
+					</div>
+
+					<div>
+						<label for="js-bodyweight" class="label">Bodyweight (pounds):</label>
+						<input id="js-bodyweight" class="input" type="text" placeholder="153" required>
+					</div>
+
+					<div>
+						<label for="js-comments" class="label">Comments on Performance:</label>
+						<input id="js-comments" class="input" type="text" placeholder="Completed all sets easily" required>
+					</div>
+
+					<div>
+						<button type="submit" class="button">Add Workout</button>
+						<button type="button" class="button" id="js-hide-workout-form">Close Workout Form</button>
+					</div>
+				</fieldset>
+			</form>
+		</section>
+
+		<section id="edit-workout-form" aria-hidden="true" hidden>
+			<form id="js-edit-workout-form">
+				
+			</form>
+		</section>
+
+		<section>
+			<ul id="display-workout-log" aria-hidden="true" hidden class="rolldown-list">
+				
+			</ul>
+		</section>
+
+		<section id="progress-chart" aria-hidden="true" hidden>
+			<form id="search-grip-form">
+				<fieldset>
+					<legend>Search for one of your grips to track your progress</legend>
+					<div>
+						<label>Grip Type:</label>
+						<!-- <input id="js-grip-progress-search" class="input" type="text" placeholder="crimp" required> -->
+						<select id="js-grip-progress-search" class="input" name="select-grip-progress" required>
+							<option value="crimp">Crimp</option>
+							<option value="open">Open</option>
+							<option value="IM">IM pocket</option>
+							<option value="MR">MR pocket</option>
+							<option value="mono">Mono pocket</option>
+						</select>
+						<button id="js-search-grip-button" type="submit" class="button">Get Progress</button>
+					</div>
+					<div>
+						
+					</div>
+				</fieldset>
+			</form>
+			
+			<button id="js-hide-progress-button" type="button" role="button">Hide Progress Chart</button>
+			
+			<div class="chart-container">
+				<canvas id="myChart"></canvas>
+			</div>
+		</section>
+		
+	</main>
+	<script type="text/javascript" src="./js/protected.js"></script>
+	<script type="text/javascript" src="./js/workouts.js"></script>
+	<script type="text/javascript" src="./js/progress-chart.js"></script>
+</body>
+</html>
