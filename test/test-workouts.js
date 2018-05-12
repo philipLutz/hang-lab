@@ -22,7 +22,7 @@ describe('/api/workouts', function () {
   const firstName = 'Example';
   const lastName = 'User';
   const email = 'exampleEmail@gmail.com';
-  const user = 'exampleUser';
+  const user = 'exampleUserName';
   const workoutDate = '05/11/2018';
   const grip = 'crimp';
   const holdSize = 15;
@@ -94,8 +94,8 @@ describe('/api/workouts', function () {
         const token = jwt.sign({user: {username: 'exampleUserName'}}, JWT_SECRET, {expiresIn: 10000});
         return chai
           .request(app)
-          .get('/api/workouts')
-          .send({username, grip})
+          .get(`/api/workouts/${grip}`)
+          .send({username})
           .set('Authorization', `Bearer ${token}`)
           .then(function(res) {
             expect(res).to.have.status(200);
@@ -107,14 +107,34 @@ describe('/api/workouts', function () {
 
     describe('POST', function () {
       it('Should add a workout', function () {
-
+        const token = jwt.sign({user: {username: 'exampleUserName'}}, JWT_SECRET, {expiresIn: 10000});
+        const workoutBody = {user, workoutDate, grip, holdSize, sets, setRest, reps, repHang, repRest, load, bodyweight, comments};
+        return chai
+          .request(app)
+          .post('/api/workouts')
+          .send(workoutBody)
+          .set('Authorization', `Bearer ${token}`)
+          .then(function(res) {
+            expect(res).to.have.status(201);
+            expect(res).to.be.json;
+            expect(res.body.workoutDate).to.equal(workoutBody.workoutDate);
+          })
       });
     });
 
 
     describe('PUT', function () {
       it('Should edit an existing workout', function () {
+        it('Should add a workout', function () {
+        const token = jwt.sign({user: {username: 'exampleUserName'}}, JWT_SECRET, {expiresIn: 10000});
+        const updateWorkout = {}
+        return Workout
+          .findOne()
+          .then(function(res) {
 
+          })
+          
+        });
       });
     });
 
@@ -135,11 +155,3 @@ describe('/api/workouts', function () {
 
 
 });
-
-
-
-
-
-
-
-
