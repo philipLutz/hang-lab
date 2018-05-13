@@ -8,25 +8,25 @@ Hang Lab is an application aimed at rock climbers who engage in hangboard (also 
 
 ### Create Account
 
-![Create Account Page](hang-lab/Screen Shot 2018-05-13 at 15.47.05.png "Create Account Page")
+![Create Account Page](https://raw.githubusercontent.com/philipLutz/hang-lab/master/Screen%20Shot%202018-05-13%20at%2015.47.05.png "Create Account Page")
 
 ### Login
 
-![Login Page](hang-lab/Screen Shot 2018-05-13 at 15.47.28.png "Login Page")
+![Login Page](https://raw.githubusercontent.com/philipLutz/hang-lab/master/Screen%20Shot%202018-05-13%20at%2015.47.28.png "Login Page")
 
 ### User Account with Workout Log
 
-![Workout Log](hang-lab/Screen Shot 2018-05-13 at 15.48.09.png "Workout Log")
+![Workout Log](https://raw.githubusercontent.com/philipLutz/hang-lab/master/Screen%20Shot%202018-05-13%20at%2015.48.09.png "Workout Log")
 
 ### Add Workout Form
 
-![Add Workout Form](hang-lab/Screen Shot 2018-05-13 at 15.49.03.png "Add Workout Form")
+![Add Workout Form](https://raw.githubusercontent.com/philipLutz/hang-lab/master/Screen%20Shot%202018-05-13%20at%2015.49.03.png "Add Workout Form")
 
 ### Edit Workout Form
 
-![Edit Workout Form](hang-lab/Screen Shot 2018-05-13 at 15.49.47.png "Edit Workout Form")
+![Edit Workout Form](https://raw.githubusercontent.com/philipLutz/hang-lab/master/Screen%20Shot%202018-05-13%20at%2015.49.47.png "Edit Workout Form")
 
 ### View Progress Chart
 
-![Progress Chart](hang-lab/Screen Shot 2018-05-13 at 15.50.28.png "Progress Chart")
+![Progress Chart](https://raw.githubusercontent.com/philipLutz/hang-lab/master/Screen%20Shot%202018-05-13%20at%2015.50.28.png "Progress Chart")
 
