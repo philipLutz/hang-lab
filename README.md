@@ -36,7 +36,7 @@ The user starts at the account creation page, and if they already have an accoun
 
 ## Try it Out 
 
-(heroku)
+https://evening-wave-56565.herokuapp.com/
 
 ## Technology
 
