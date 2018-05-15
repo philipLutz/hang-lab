@@ -277,6 +277,16 @@ select {
     margin: 0.5vw;
   }
 
+  /*Action Results*/
+
+  #action-results {
+    position: absolute;
+    top: 31vw;
+    left: 20%;
+    font-size: 5vw;
+    text-align: center;
+  }
+
   #display-workout-log {
     position: absolute;
     top: 28vw;

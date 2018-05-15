@@ -108,6 +108,9 @@ $('#js-add-workout-button').click(event => {
 	$('#progress-chart').attr("hidden", "true");
 	$('#edit-workout-form').attr("aria-hidden", "true");
 	$('#edit-workout-form').attr("hidden", "true");
+	$('#edit-workout-result').empty();
+	$('#add-workout-result').empty();
+	$('#delete-workout-result').empty();
 });
 
 $('#js-hide-workout-form').click(event => {
@@ -399,6 +402,15 @@ function deleteWorkout(workoutIdToDelete) {
 				)
 		}
 	});
+	$('#display-workout-log').attr("aria-hidden", "true");
+	$('#display-workout-log').attr("hidden", "true");
+	$('#display-workout-log').empty();
+	$('#progress-chart').attr("aria-hidden", "true");
+	$('#progress-chart').attr("hidden", "true");
+	$('#edit-workout-form').attr("aria-hidden", "true");
+	$('#edit-workout-form').attr("hidden", "true");
+	$('#edit-workout-result').empty();
+	$('#add-workout-result').empty();
 }
 
 
