@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
 	margin: 0;
-	font-family: 'East Sea Dokdo', cursive;
+	font-family: 'Amaranth', sans-serif;
 }
 
 main {
@@ -28,6 +28,7 @@ h1 {
   left: 22%;
   margin-top: 0;
   padding-top: 0;
+  font-family: 'East Sea Dokdo', cursive;
 }
 
 header {

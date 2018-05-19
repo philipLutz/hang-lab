@@ -1,5 +1,29 @@
 'use strict';
 
+// Show Create Account Form
+
+$('#show-create-account-button').on('click', event => {
+	event.preventDefault();
+	$('#about').attr("aria-hidden", "true");
+	$('#about').attr("hidden", "true");
+	$('#show-buttons').attr("aria-hidden", "true");
+	$('#show-buttons').attr("hidden", "true");
+	$('#js-signup-form').attr("aria-hidden", "false");
+	$('#js-signup-form').removeAttr("hidden");
+});
+
+// Back to Start
+
+$('#back-button').on('click', event => {
+	event.preventDefault();
+	$('#about').attr("aria-hidden", "false");
+	$('#about').removeAttr("hidden");
+	$('#show-buttons').attr("aria-hidden", "false");
+	$('#show-buttons').removeAttr("hidden");
+	$('#js-signup-form').attr("aria-hidden", "true");
+	$('#js-signup-form').attr("hidden", "true");
+})
+
 //Create New Account
 
 $('#js-signup-form').submit(event => {

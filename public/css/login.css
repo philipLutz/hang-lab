@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
 	margin: 0;
-	font-family: 'East Sea Dokdo', cursive;
+	font-family: 'Amaranth', sans-serif;
 }
 
 main {
@@ -24,6 +24,7 @@ h1 {
 	top: -6vw;
 	left: 13%;
 	font-size: 28vw;
+	font-family: 'East Sea Dokdo', cursive;
 }
 
 #sign-up-button {
