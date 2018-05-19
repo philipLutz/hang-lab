@@ -11,7 +11,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-color: hsla(0,0%,100%,0.5);
+  background-color: hsla(0,0%,100%,0.45);
   background-blend-mode: overlay;
 }
 
@@ -67,6 +67,7 @@ button {
   	color: black;
   	border-radius: 2vw;
   	border-color: rgba(129, 5, 252, 0.7);
+  	margin: 1vw;
 }
 
 #js-signup-form {
@@ -82,6 +83,16 @@ button {
 	height: 6.5vw;
 	text-align: center;
 	padding: 3vw;
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 0.8; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
 }
 
 #js-signup-form p {
