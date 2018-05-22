@@ -190,6 +190,12 @@ button {
 		padding: 1vw;
 	}
 
+	.form-input {
+		/*vertical-align: middle;
+		display: flex;
+		align-content: right;*/
+	}
+
 
 	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 	    color: white;

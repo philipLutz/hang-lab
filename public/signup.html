@@ -7,7 +7,6 @@
 	<title>Hang Lab</title>
 	<meta name="description" content="Hangboarding training log">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
     <link href="./css/signup.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -42,29 +41,42 @@
 				<fieldset>
 					<legend><b>Create Account</b></legend>
 					
-					<div>
+					<div class="form-input">
 						<label for="js-signup-firstName" class="label"><b>First name</b></label>
-						<input id="js-signup-firstName" class="input" type="text" placeholder="Phil" required>
+						<div>
+							<input id="js-signup-firstName" class="input" type="text" placeholder="Phil" required>
+						</div>
 					</div>
 
-					<div>
+					<div class="form-input">
 						<label for="js-signup-lastName" class="label"><b>Last name</b></label>
-						<input id="js-signup-lastName" class="input" type="text" placeholder="Lutz" required>
+						<div>
+							<input id="js-signup-lastName" class="input" type="text" placeholder="Lutz" required>
+						</div>
 					</div>
 
-					<div>
+					<div class="form-input">
 						<label for="js-signup-username" class="label"><b>Username</b></label>
-						<input id="js-signup-username" class="input" type="text" placeholder="p_a_lutz" required>
+						<div>
+							<input id="js-signup-username" class="input" type="text" placeholder="p_a_lutz" required>
+						</div>
 					</div>
 
-					<div>
+					<div class="form-input">
 						<label for="js-signup-email" class="label"><b>Email address</b></label>
-						<input id="js-signup-email" class="input" type="email" placeholder="philiplutz413@gmail.com" required>
+						<div>
+							<input id="js-signup-email" class="input" type="email" placeholder="philiplutz413@gmail.com" required>
+						</div>
+					</div>
+
+					<div class="form-input">
+						<label for="js-signup-password" class="label"><b>Password</b></label>
+						<div>	
+							<input id="js-signup-password" class="input" type="password" minlength="10" placeholder="s3cr3tPa$$w0rd" required>
+						</div>
 					</div>
 
 					<div>
-						<label for="js-signup-password" class="label"><b>Password</b></label>
-						<input id="js-signup-password" class="input" type="password" minlength="10" placeholder="s3cr3tPa$$w0rd" required>
 						<p><b><i>Password needs to contain at least 10 characters</i></b></p>
 					</div>
 
