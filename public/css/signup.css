@@ -48,12 +48,15 @@ h1 {
 }
 
 #signup-result {
-	position: absolute;
-	font-size: 6vw;
+	font-size: 5vw;
+	width: 100%;
+	text-align: center;
+	padding: 1vw;
 }
 
 fieldset {
 	border: none;
+	padding: 0;
 }
 
 legend {
@@ -146,17 +149,20 @@ button {
 	}
 
 	#signup-result {
-		position: absolute;
-		font-size: 4vw;
+		font-size: 2vw;
+		width: 100%;
+		text-align: center;
+		padding: 1vw;
 	}
 
 	fieldset {
 		border: none;
+		padding: 0;
 	}
 
 	legend {
-		font-size: 3.5vw;
-		padding-top: 1vw;
+		font-size: 4vw;
+		padding-top: 0;
 		padding-bottom: 0;
 		margin-bottom: 0;
 
@@ -175,7 +181,7 @@ button {
 
 	#js-signup-form {
 		position: absolute;
-		top: 24vh;
+		top: 28vh;
 		width: 100%;
 		text-align: center;
 		font-size: 2vw;
