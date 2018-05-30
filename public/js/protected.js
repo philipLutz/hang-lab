@@ -21,7 +21,7 @@ $(() => {
 
 //Logout User
 
-$('#js-logout-button').click(event => {
+$('.js-logout-button').click(event => {
 	event.preventDefault();
 	logoutUser();
 });

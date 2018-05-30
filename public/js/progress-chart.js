@@ -8,7 +8,7 @@ var gripSearchedProgress = '';
 
 // Click event
 
-$('#js-show-progress-button').click(event => {
+$('.js-show-progress-button').click(event => {
 	event.preventDefault();
 	$('#display-workout-log').empty();
 	$('#edit-workout-result').empty();

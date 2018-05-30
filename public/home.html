@@ -9,22 +9,69 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 	<!-- <script src="moment.js"></script> -->
-	<link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
     <link href="./css/home.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-	<header>
-		<button type="button" role="button" id="js-get-workouts">View Workout Log</button>
-		<button type="button" role="button" id="js-hide-workout-log">Hide Workout Log</button>
-		<button type="button" role="button" id="js-add-workout-button">Add a Workout</button>
-		<button type="button" role="button" id="js-show-progress-button">View Progress</button>
-		<button type="button" role="button" id="js-logout-button">Log Out</button>
-	</header>
-	<main role="main">
+	<!-- <nav role="navigation">
 		
 		<h1 role="heading">Hang Lab</h1>
 
+		<section id="button-container">
+			<button type="button" role="button" id="js-get-workouts">View Workout Log</button>
+			<button type="button" role="button" id="js-hide-workout-log">Hide Workout Log</button>
+			<button type="button" role="button" id="js-add-workout-button">Add a Workout</button>
+			<button type="button" role="button" id="js-show-progress-button">View Progress</button>
+			<button type="button" role="button" id="js-logout-button">Log Out</button>
+		</section>
+	</nav> -->
+
+	<!-- Navigation -->
+
+	<header>
+	  <nav class="mobile" id="mobile">
+
+	    <div class="hamburger" onclick="toggleHamburger();">
+	    	<h1>Hang Lab</h1>
+	     	<div class="line line1" id ="line1"></div>
+	        <div class="line line2" id ="line2"></div>
+	        <div class="line line3" id ="line3"></div>
+	    </div>
+	      
+	    <div class="mobile-menu" id="mobile-menu"       style="display:none">
+	        <ul>
+	          <li><button type="button" role="button" class="js-get-workouts">View Workout Log</button></li>
+	          <li><button type="button" role="button" class="js-hide-workout-log">Hide Workout Log</button></li>
+	          <li><button type="button" role="button" class="js-add-workout-button">Add a Workout</button></li>
+	          <li><button type="button" role="button" class="js-show-progress-button">View Progress</button></li>
+	          <li><button type="button" role="button" class="js-logout-button">Log Out</button></li>
+	        </ul>
+	    </div>
+	  </nav>
+	  
+	  <nav class="desktop">
+	    <div class="wrapper">
+	      <div class="brand">
+	        <h1>Hang Lab</h1>
+	      </div>
+	          
+	      <div class="desktop-menu">
+	        <ul>
+	          <li><button type="button" role="button" class="js-get-workouts">View Workout Log</button></li>
+	          <li><button type="button" role="button" class="js-hide-workout-log">Hide Workout Log</button></li>
+	          <li><button type="button" role="button" class="js-add-workout-button">Add a Workout</button></li>
+	          <li><button type="button" role="button" class="js-show-progress-button">View Progress</button></li>
+	          <li><button type="button" role="button" class="js-logout-button">Log Out</button></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	</header>
+
+	<!-- Main -->
+
+	<main role="main">
+		
 		<section id="action-results">
 			<div id="delete-workout-result"></div>
 			<div id="add-workout-result"></div>
@@ -36,14 +83,23 @@
 			<form id="js-add-workout-form">
 				<fieldset>
 					<legend>Add a Workout</legend>
-					
-					<div>
-						<label for="js-date" class="label">Workout Date:</label>
-						<input id="js-date" class="input" type="text" placeholder="MM/DD/YYYY" required>
-					</div>
 
-					<div>
+					<div id="labels">
+						<label for="js-date" class="label">Workout Date:</label>
 						<label for="js-grip" class="label">Grip Type:</label>
+						<label for="js-size" class="label">Hold Size (millimeters):</label>
+						<label for="js-sets" class="label">Number of Sets:</label>
+						<label for="js-set-rest" class="label">Rest Between Sets (minutes):</label>
+						<label for="js-reps" class="label">Number of Repetitions:</label>
+						<label for="js-rep-hang" class="label">Repetition Duration (seconds):</label>
+						<label for="js-rep-rest" class="label">Rest Between Repetitions (seconds):</label>
+						<label for="js-load" class="label">Load Adjustment (pounds):</label>
+						<label for="js-bodyweight" class="label">Bodyweight (pounds):</label>
+						<label for="js-comments" class="label">Comments on Performance:</label>
+					</div>
+						
+					<div id="inputs">
+						<input id="js-date" class="input" type="text" placeholder="MM/DD/YYYY" required>
 						<select id="js-grip" class="input" name="select-grip" required>
 							<option value="crimp">Crimp</option>
 							<option value="open">Open</option>
@@ -51,54 +107,18 @@
 							<option value="MR">MR pocket</option>
 							<option value="mono">Mono pocket</option>
 						</select>
-					</div>
-
-					<div>
-						<label for="js-size" class="label">Hold Size (millimeters):</label>
 						<input id="js-size" class="input" type="text" placeholder="15" required>
-					</div>
-
-					<div>
-						<label for="js-sets" class="label">Number of Sets:</label>
 						<input id="js-sets" class="input" type="text" placeholder="3" required>
-					</div>
-
-					<div>
-						<label for="js-set-rest" class="label">Rest Between Sets (minutes):</label>
 						<input id="js-set-rest" class="input" type="text" placeholder="4" required>
-					</div>
-
-					<div>
-						<label for="js-reps" class="label">Number of Repetitions:</label>
 						<input id="js-reps" class="input" type="text" placeholder="6" required>
-					</div>
-
-					<div>
-						<label for="js-rep-hang" class="label">Repetition Duration (seconds):</label>
 						<input id="js-rep-hang" class="input" type="text" placeholder="6" required>
-					</div>
-
-					<div>
-						<label for="js-rep-rest" class="label">Rest Between Repetitions (seconds):</label>
 						<input id="js-rep-rest" class="input" type="text" placeholder="4" required>
-					</div>
-
-					<div>
-						<label for="js-load" class="label">Load Adjustment (pounds):</label>
 						<input id="js-load" class="input" type="text" placeholder="10" required>
-					</div>
-
-					<div>
-						<label for="js-bodyweight" class="label">Bodyweight (pounds):</label>
 						<input id="js-bodyweight" class="input" type="text" placeholder="153" required>
-					</div>
-
-					<div>
-						<label for="js-comments" class="label">Comments on Performance:</label>
 						<input id="js-comments" class="input" type="text" placeholder="Completed all sets easily" required>
 					</div>
 
-					<div>
+					<div id="add-workout-buttons">
 						<button type="submit" class="button">Add Workout</button>
 						<button type="button" class="button" id="js-hide-workout-form">Close Workout Form</button>
 					</div>
@@ -151,5 +171,6 @@
 	<script type="text/javascript" src="./js/protected.js"></script>
 	<script type="text/javascript" src="./js/workouts.js"></script>
 	<script type="text/javascript" src="./js/progress-chart.js"></script>
+	<script type="text/javascript" src="./js/navigation.js"></script>
 </body>
 </html>

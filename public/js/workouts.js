@@ -17,7 +17,7 @@ $('.rolldown-list li').each(function () {
 
 // Get New Workout
 
-$('#js-get-workouts').click(event => {
+$('.js-get-workouts').click(event => {
 	event.preventDefault();
 	getWorkouts();
 	$('#display-workout-log').empty();
@@ -35,7 +35,7 @@ $('#js-get-workouts').click(event => {
 	$('#progress-chart').attr("hidden", "true");
 });
 
-$('#js-hide-workout-log').click(event => {
+$('.js-hide-workout-log').click(event => {
 	event.preventDefault();
 	$('#display-workout-log').attr("aria-hidden", "true");
 	$('#display-workout-log').attr("hidden", "true");
@@ -97,7 +97,7 @@ function displayAllWorkouts(data) {
 
 // Post New Workout
 
-$('#js-add-workout-button').click(event => {
+$('.js-add-workout-button').click(event => {
 	event.preventDefault();
 	$('#add-workout-form').attr("aria-hidden", "false");
 	$('#add-workout-form').removeAttr("hidden");
