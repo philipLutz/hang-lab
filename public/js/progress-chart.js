@@ -126,8 +126,8 @@ function processData(data) {
 
 function renderChart(workoutDateProgress, totalLoadProgress, gripSearchedProgress) {
 
-	Chart.defaults.global.defaultFontFamily = 'Amaranth';
-	Chart.defaults.global.defaultFontColor = 'rgba(0, 0, 0, 0.7)';
+	Chart.defaults.global.defaultFontFamily = 'Stylish';
+	Chart.defaults.global.defaultFontColor = 'rgba(51, 51, 51, 1)';
 	Chart.defaults.global.defaultFontSize = 20;
 	Chart.defaults.global.elements.line.borderColor = 'rgba(129, 5, 252, 0.9)'
 

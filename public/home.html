@@ -139,12 +139,12 @@
 		</section>
 
 		<section id="progress-chart" aria-hidden="true" hidden>
+			
 			<form id="search-grip-form">
 				<fieldset>
-					<legend>Search for one of your grips to track your progress</legend>
-					<div>
+					<legend>Your Progress</legend>
+					<div id="progress-search-container">
 						<label>Grip Type:</label>
-						<!-- <input id="js-grip-progress-search" class="input" type="text" placeholder="crimp" required> -->
 						<select id="js-grip-progress-search" class="input" name="select-grip-progress" required>
 							<option value="crimp">Crimp</option>
 							<option value="open">Open</option>
@@ -152,15 +152,13 @@
 							<option value="MR">MR pocket</option>
 							<option value="mono">Mono pocket</option>
 						</select>
-						<button id="js-search-grip-button" type="submit" class="button">Get Progress</button>
-					</div>
-					<div>
-						
+						<div>
+							<button id="js-search-grip-button" type="submit" class="button">Get Progress</button>
+							<button id="js-hide-progress-button" type="button" role="button">Hide Progress Chart</button>
+						</div>
 					</div>
 				</fieldset>
 			</form>
-			
-			<button id="js-hide-progress-button" type="button" role="button">Hide Progress Chart</button>
 			
 			<div class="chart-container">
 				<canvas id="myChart"></canvas>

@@ -19,21 +19,6 @@ html {
   background-attachment: fixed;
 }
 
-/*Mobile and iPad Size*/
-
-/*h1 {
-	font-size: 6vw;
-}*/
-
-/*nav button {
-  font-size: 4.5vw;
-  background-color: rgba(129, 5, 252, 0.3);
-  color: rgba(0, 0, 0, 1);
-  border-radius: 2vw;
-  border-color: rgba(129, 5, 252, 0.3);
-  margin: 0.5vw;
-}*/
-
 /*Navigation*/
 
 /* MOBILE NAV */
@@ -144,9 +129,9 @@ nav a:hover{
 /*Action Results*/
 
 #action-results {
+  width: 100%;
   position: absolute;
-  top: 47vw;
-  left: 13%;
+  top: 17vw;
   font-size: 6vw;
   text-align: center;
 }
@@ -155,16 +140,14 @@ nav a:hover{
 
 #display-workout-log {
   position: absolute;
-  top: 13vw;
-  width: 90%; 
-  left: 5%;
+  top: 17vw;
+  width: 100%; 
   text-align: center;
   font-size: 6vw;
 }
 
 #display-workout-log button {
   font-size: 4vw;
-  /*background-color: rgba(0, 102, 255, 0.3);*/
   background-color: rgba(129, 5, 252, 0.3);
   color: #333;
   border-radius: 2vw;
@@ -179,9 +162,8 @@ nav a:hover{
 
 #add-workout-form {
   position: absolute;
-  top: 47vw;
-  width: 94%; 
-  left: 2%;
+  top: 23vw;
+  width: 100%; 
   box-sizing: border-box;
 }
 
@@ -190,13 +172,12 @@ fieldset {
 }
 
 #add-workout-form legend {
-  font-size: 7vw;
+  font-size: 10vw;
   text-align: center;
 }
 
 #add-workout-form button {
   font-size: 4vw;
-  /*background-color: rgba(0, 102, 255, 0.3);*/
   background-color: rgba(129, 5, 252, 0.3);
   color: #333;
   border-radius: 2vw;
@@ -283,31 +264,56 @@ select {
 
 /*Progress Chart Styling*/
 
+#progress-chart legend {
+  color: #333;
+  font-size: 10vw;
+}
+
 #progress-chart {
   text-align: center;
   position: absolute;
-  top: 47vw;
-  width: 94%;
+  top: 23vw;
+  width: 100%;
   height: 80vh; 
-  left: 2%;
   box-sizing: border-box;
-  font-size: 4vw;
+  font-size: 5vw;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  padding: 2vw;
+  margin: 1vw;
+}
+
+#progress-search-container {
+  bottom: 3vw;
+  position: relative;
 }
 
 #progress-chart button {
-  font-size: 4vw;
-  /*background-color: rgba(0, 102, 255, 0.3);*/
   background-color: rgba(129, 5, 252, 0.3);
   color: #333;
+  font-size: 5vw;
   border-radius: 2vw;
   border-color: rgba(129, 5, 252, 0.3);
 }
 
+#progress-chart select {
+  background-color: rgba(129, 5, 252, 0.3);
+  color: #333;
+  font-size: 5vw;
+  text-align: center;
+  border-color: rgba(129, 5, 252, 0.3);
+  margin: 1vw;
+}
+
 .chart-container {
-  position: relative;
+  position: absolute;
+  top: 31vw;
   margin: auto;
-  height: 56vh;
-  /*width: 90vw;*/
+  height: 67vh;
+  width: 100%;
 }
 
 
