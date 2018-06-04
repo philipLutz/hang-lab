@@ -147,11 +147,12 @@ nav a:hover{
 }
 
 #display-workout-log button {
-  font-size: 4vw;
+  font-size: 5vw;
   background-color: rgba(129, 5, 252, 0.3);
-  color: #333;
+  font-color: #333;
   border-radius: 2vw;
   border-color: rgba(129, 5, 252, 0.3);
+  border-width: 2px;
 }
 
 #display-workout-log h3 {
@@ -177,15 +178,19 @@ fieldset {
 }
 
 #add-workout-form button {
-  font-size: 4vw;
+  font-size: 5vw;
   background-color: rgba(129, 5, 252, 0.3);
-  color: #333;
+  font-color: #333;
   border-radius: 2vw;
+  border-width: 2px;
   border-color: rgba(129, 5, 252, 0.3);
 }
 
 #add-workout-form div {
+  display: block;
   text-align: center;
+  margin: 1vw;
+  padding: 1vw;
 }
 
 #add-workout-form label {
@@ -194,54 +199,60 @@ fieldset {
 }
 
 #add-workout-form input {
-  background: none;
+  background: rgba(129, 5, 252, 0.3);
   border-radius: 2vw;
-  width: 26vw;
+  width: 31vw;
   text-align: center;
-  font-size: 4.5vw;
-  height: 5.5vw;
+  font-size: 5vw;
+  border-color: rgba(129, 5, 252, 0.3);
+  border-width: 2px;
+}
+
+#add-workout-form select {
+  background: rgba(129, 5, 252, 0.3);
+  font-size: 5vw;
+  font-color: #333;
+  border-color: rgba(129, 5, 252, 0.3);
+  border-width: 2px;
+  text-align-last: center;
+  text-align: center;
+  -ms-text-align-last: center;
+  -moz-text-align-last: center;
 }
 
 option {
-  font-size: 4.5vw;
+  font-size: 5vw;
   background: none;
-}
-
-select {
-  font-size: 4.5vw;
-  background: none;
-}
-
-#add-workout-form #js-comments {
-  width: 37vw;
 }
 
 /*Edit Workout Form*/
 
 #edit-workout-form {
   position: absolute;
-  top: 47vw;
-  width: 94%; 
-  left: 2%;
+  top: 23vw;
+  width: 100%; 
   box-sizing: border-box;
 }
 
 #edit-workout-form legend {
-  font-size: 7vw;
+  font-size: 10vw;
   text-align: center;
 }
 
 #edit-workout-form button {
-  font-size: 4vw;
-  /*background-color: rgba(0, 102, 255, 0.3);*/
+  font-size: 5vw;
   background-color: rgba(129, 5, 252, 0.3);
-  color: #333;
+  font-color: #333;
   border-radius: 2vw;
+  border-width: 2px;
   border-color: rgba(129, 5, 252, 0.3);
 }
 
 #edit-workout-form div {
+  display: block;
   text-align: center;
+  margin: 1vw;
+  padding: 1vw;
 }
 
 #edit-workout-form label {
@@ -250,16 +261,25 @@ select {
 }
 
 #edit-workout-form input {
-  background: none;
+  background: rgba(129, 5, 252, 0.3);
   border-radius: 2vw;
-  width: 26vw;
+  width: 31vw;
   text-align: center;
-  font-size: 4.5vw;
-  height: 5.5vw;
+  font-size: 5vw;
+  border-color: rgba(129, 5, 252, 0.3);
+  border-width: 2px;
 }
 
-#edit-workout-form #js-edit-comments {
-  width: 37vw;
+#edit-workout-form select {
+  background: rgba(129, 5, 252, 0.3);
+  font-size: 5vw;
+  font-color: #333;
+  border-color: rgba(129, 5, 252, 0.3);
+  border-width: 2px;
+  text-align-last: center;
+  text-align: center;
+  -ms-text-align-last: center;
+  -moz-text-align-last: center;
 }
 
 /*Progress Chart Styling*/
@@ -277,6 +297,7 @@ select {
   height: 80vh; 
   box-sizing: border-box;
   font-size: 5vw;
+  font-color: #333;
   margin: 0;
   padding: 0;
 }
@@ -293,19 +314,25 @@ fieldset {
 
 #progress-chart button {
   background-color: rgba(129, 5, 252, 0.3);
-  color: #333;
+  font-color: #333;
   font-size: 5vw;
   border-radius: 2vw;
   border-color: rgba(129, 5, 252, 0.3);
+  border-width: 2px;
 }
 
 #progress-chart select {
   background-color: rgba(129, 5, 252, 0.3);
-  color: #333;
+  font-color: #333;
   font-size: 5vw;
   text-align: center;
   border-color: rgba(129, 5, 252, 0.3);
+  border-width: 2px;
   margin: 1vw;
+  text-align-last: center;
+  text-align: center;
+  -ms-text-align-last: center;
+  -moz-text-align-last: center;
 }
 
 .chart-container {
