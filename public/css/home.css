@@ -64,13 +64,14 @@ h1 {
 .mobile-menu{
   background-color: #333;
   text-align: center;
-  /*padding-left: 10px;*/
   line-height: 1.5em;
 }
 nav button {
   text-decoration: none;
   color: white;
   font-size: 5vw;
+  background: none;
+  border: none;
 }
 nav ul {
   padding-left: 0;
@@ -84,39 +85,53 @@ nav a:hover{
 
 
 /* DESKTOP NAV */
-.desktop{
+.desktop {
   background-color: #333;
 }
-.desktop .wrapper{
+.desktop .wrapper {
   display: flex;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   align-items: center;
 }
 
-.brand{
+.brand {
   margin-right: auto ;
 }
 
-.brand h1{
+.brand h1 {
   color: #fff;
+  position: absolute;
+  top: 0;
+  font-size: 4vw;
+  margin-bottom: 1vw;
 }
 
-.desktop-menu ul{
+.desktop-menu ul {
   display: flex;
+  padding-left: 23vw;
 }
 
-.desktop-menu li{
+.desktop-menu li {
   list-style: none;
-  margin: 20px;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 1vw;
+  font-size: 3.5vw;
 }
 
-.desktop{
+.desktop-menu button {
+  background: none;
+  border: none;
+  font-size: 1.75vw;
+}
+
+.desktop {
   display: none;
 }
 
 /* MEDIA QUERY */
-@media (min-width: 600px){
+@media (min-width: 770px){
   .desktop{
     display: block;
   }
