@@ -167,7 +167,7 @@ function postNewWorkout(workoutDate, grip, holdSize, sets, setRest, reps, repHan
 		success: (data) => {
 			if(data) {
 				$('#add-workout-result').prepend(
-					`<div id="add-workout-success">Your workout was successfuly logged.</div>`
+					`<div id="add-workout-success">Your workout was successfully logged.</div>`
 					)
 				$('input[id="js-date"]').val('');
 				$('input[id="js-grip"]').val('');
@@ -356,7 +356,7 @@ function putWorkout(workoutDateNew, gripNew, holdSizeNew, setsNew, setRestNew, r
 		success: (data) => {
 			if(data) {
 				$('#edit-workout-result').prepend(
-					`<div class="edit-workout-success">Your workout was successfuly changed.</div>`
+					`<div class="edit-workout-success">Your workout was successfully changed.</div>`
 					)
 			}
 		},
