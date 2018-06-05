@@ -8,7 +8,7 @@ var gripSearchedProgress = '';
 
 // Click event
 
-$('#js-show-progress-button').click(event => {
+$('.js-show-progress-button').click(event => {
 	event.preventDefault();
 	$('#display-workout-log').empty();
 	$('#edit-workout-result').empty();
@@ -126,8 +126,8 @@ function processData(data) {
 
 function renderChart(workoutDateProgress, totalLoadProgress, gripSearchedProgress) {
 
-	Chart.defaults.global.defaultFontFamily = 'East Sea Dokdo';
-	Chart.defaults.global.defaultFontColor = 'rgba(0, 0, 0, 0.7)';
+	Chart.defaults.global.defaultFontFamily = 'Stylish';
+	Chart.defaults.global.defaultFontColor = 'rgba(51, 51, 51, 1)';
 	Chart.defaults.global.defaultFontSize = 20;
 	Chart.defaults.global.elements.line.borderColor = 'rgba(129, 5, 252, 0.9)'
 

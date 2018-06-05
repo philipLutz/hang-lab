@@ -7,20 +7,20 @@
 	<title>Hang Lab</title>
 	<meta name="description" content="Hangboarding training log">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
     <link href="./css/login.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-	<header>
-		<button type="button" role="button" id="sign-up-button">Sign Up</button>
-	</header>
 	<main role="main">
-		<h1 role="heading">Hang Lab</h1>
-		<h3 role="heading"></h3>
-		<section>
+
+		<section id="title">
+			<h1 role="heading">Hang Lab</h1>
+		</section>
+
+		<section id="login-form">
 			<form id="js-login-form">
 				<fieldset>
-					<legend>Login</legend>
+					<legend><b>Login</b></legend>
 
 					<div>
 						<input id="js-login-username" class="input" type="username" placeholder="username" required>
@@ -30,9 +30,10 @@
                 	</div>
 
                 	<button class="button" type="submit">Login</button>
+                	<button type="button" role="button" id="sign-up-button">Back</button>
 				</fieldset>
 			</form>
-			<div id="incorrect-message" class="alert" aria-hidden="true" hidden><b>Hmmm...incorrect username and/or password</b></div>
+			<div id="incorrect-message" class="alert" aria-hidden="true" hidden><b>Incorrect username and/or password</b></div>
 		</section>
 		
 	</main>

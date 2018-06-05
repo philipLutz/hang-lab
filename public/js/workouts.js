@@ -17,7 +17,7 @@ $('.rolldown-list li').each(function () {
 
 // Get New Workout
 
-$('#js-get-workouts').click(event => {
+$('.js-get-workouts').click(event => {
 	event.preventDefault();
 	getWorkouts();
 	$('#display-workout-log').empty();
@@ -35,7 +35,7 @@ $('#js-get-workouts').click(event => {
 	$('#progress-chart').attr("hidden", "true");
 });
 
-$('#js-hide-workout-log').click(event => {
+$('.js-hide-workout-log').click(event => {
 	event.preventDefault();
 	$('#display-workout-log').attr("aria-hidden", "true");
 	$('#display-workout-log').attr("hidden", "true");
@@ -97,7 +97,7 @@ function displayAllWorkouts(data) {
 
 // Post New Workout
 
-$('#js-add-workout-button').click(event => {
+$('.js-add-workout-button').click(event => {
 	event.preventDefault();
 	$('#add-workout-form').attr("aria-hidden", "false");
 	$('#add-workout-form').removeAttr("hidden");
@@ -240,7 +240,7 @@ $('#display-workout-log').on('click', '.js-edit-button', (event => {
 			</div>
 
 			<div>
-				<label for="js-edit-size" class="label">Hold Size (millimeters):</label>
+				<label for="js-edit-size" class="label">Hold Size (mm):</label>
 				<input id="js-edit-size" class="input" type="text" value="${editHoldSize}" required>
 			</div>
 
@@ -250,7 +250,7 @@ $('#display-workout-log').on('click', '.js-edit-button', (event => {
 			</div>
 
 			<div>
-				<label for="js-edit-set-rest" class="label" >Rest Between Sets (minutes):</label>
+				<label for="js-edit-set-rest" class="label" >Rest Between Sets (min):</label>
 				<input id="js-edit-set-rest" class="input" type="text" value="${editSetRest}" required>
 			</div>
 
@@ -260,27 +260,27 @@ $('#display-workout-log').on('click', '.js-edit-button', (event => {
 			</div>
 
 			<div>
-				<label for="js-edit-rep-hang" class="label">Repetition Duration (seconds):</label>
+				<label for="js-edit-rep-hang" class="label">Repetition Duration (s):</label>
 				<input id="js-edit-rep-hang" class="input" type="text" value="${editRepHang}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-rep-rest" class="label">Rest Between Repetitions (seconds):</label>
+				<label for="js-edit-rep-rest" class="label">Repetition Rest (s):</label>
 				<input id="js-edit-rep-rest" class="input" type="text" value="${editRepRest}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-load" class="label">Load Adjustment (pounds):</label>
+				<label for="js-edit-load" class="label">Load Adjustment (lbs):</label>
 				<input id="js-edit-load" class="input" type="text" value="${editLoad}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-bodyweight" class="label">Bodyweight (pounds):</label>
+				<label for="js-edit-bodyweight" class="label">Bodyweight (lbs):</label>
 				<input id="js-edit-bodyweight" class="input" type="text" value="${editBodyweight}" required>
 			</div>
 
 			<div>
-				<label for="js-edit-comments" class="label">Comments on Performance:</label>
+				<label for="js-edit-comments" class="label">Performance Comments:</label>
 				<input id="js-edit-comments" class="input" type="text" value="${editComments}" required>
 			</div>
 
