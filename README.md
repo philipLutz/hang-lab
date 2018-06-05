@@ -38,6 +38,11 @@ The user starts at the account creation page, and if they already have an accoun
 
 https://evening-wave-56565.herokuapp.com/
 
+If you do not want to create your own account, you can use: 
+
+Username = TestUser1
+Password = 1234512345
+
 ## Technology
 
 ### Front-End
