@@ -40,9 +40,9 @@ https://evening-wave-56565.herokuapp.com/
 
 If you do not want to create your own account, you can use: 
 
-  Username = TestUser1
+    Username = TestUser1
   
-  Password = 1234512345
+    Password = 1234512345
 
 ## Technology
 
