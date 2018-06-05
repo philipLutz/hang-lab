@@ -1,3 +1,10 @@
 language: node_js
 node_js: node
 services: mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: s5Hq2y+V3t6JHspaszhe68wCwSw7wq0F0H18YJQvOpjgyCa8CkUICxShLIC0WpNnlXwRDN/yXfmKuG58cwVoY4rYhxsKZShKzveOSMd/8Isj5oEt+nibkhmmFvjp2wXpn22Kdr+Lz61BGxkKzSrMLSPFP1LVwunQjP0Z/BNmeLZqAbjQbRhy2R16h9FWIjicM54h7uZSk+UQ86IXaa0fg141df5NL7f7cPHwFhnY1X6voH/P1SrAdkCdpUMbNzBLE71qoPDLYN52Q1td2p00dBzO/hIz1UNiFa0Kw1RRXstmWMiFAy5BwQ62FpSyj2I9Wig3ehiTUycJa0lJE0/uMdu/mEdN3T/K/qKMLoIQfotpR+1lWDifl7y4lwxKKZJ8p9dGcORN9/VR1ZlMwOIuVBuHZgcO6rR9E5/NNZJodmP4fDLgyMloPiaia2suG9tqGwFCqgZ7APCeBwU2feD54A24KwHSiHL/p9nj/YMqdJCZRBJy3T5pcjjTH7jimJ1CxM0kf4e9jJA3lvfMJsmiLm71JaoUMsdZETKbU0dfTQ23ZWsW1L0ub5YOFM0o7eBSRKQDvInR3G/uLSysiH6EW6W1VzAX4gLfbfj+y/d/WokIOqUZmIobi1U8hBFMYofwfNHiBu5IhrsqkVMFTpJjKrnOSMuzOetXAlppKx2ehxU=
+  app: evening-wave-56565
+  on:
+    repo: philipLutz/hang-lab
