@@ -38,11 +38,7 @@ The user starts at the account creation page, and if they already have an accoun
 
 https://evening-wave-56565.herokuapp.com/
 
-If you do not want to create your own account, you can use: 
-
-    Username = TestUser1
-  
-    Password = 1234512345
+If you do not want to create your own account, you can use an example account that has the username of "TestUser1" with the password "1234512345".  This account is prefilled with typical hangboard workout information and is an easy way to see how the application is used.
 
 ## Technology
 
