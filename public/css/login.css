@@ -89,6 +89,10 @@ button {
 	padding: 3vw;
 }
 
+#demo-message {
+	font-size: 3vw;
+}
+
 /*Larger Screens*/
 
 @media only screen and (min-width: 770px) {
@@ -161,7 +165,6 @@ button {
 		padding: 1vw;
 	}
 
-
 	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 	    color: white;
 	    opacity: 0.8; /* Firefox */
@@ -174,6 +177,10 @@ button {
 	#js-login-form label {
 		font-size: 3vw;
 		padding: 1vw;
+	}
+
+	#demo-message {
+		font-size: 2vw;
 	}
 }
 
